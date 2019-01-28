@@ -19,7 +19,9 @@ algorithm_file_path='/basic_data/icdc/algorithms/20190115/'
 basic_file_path='/basic_data/icdc/resumes_extras/20190115/'
 
 def extract_cv_info(line):
+    print(line)
     line=line.split('\t')
+    print(line)
     id=line[0]
     info=json.loads(line[1])
     res={id:{'cv_entity':info['cv_entity'],'cv_tag':info['cv_tag']}}
