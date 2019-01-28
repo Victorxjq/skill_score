@@ -13,8 +13,9 @@ def get_files_list(root_path):
         if len(dir_path) != 0:
             file_path_list = os.popen("""hadoop dfs -ls %s | awk  -F ' '  '{print $8}' """ % (dir_path)).readlines()
             for file_path in file_path_list:
-                file_path = re.split(' ', file_path.replace('\n', ''))
-                files_list.append(file_path[0])
+                if file_path!=dir_path:
+                    file_path = re.split(' ', file_path.replace('\n', ''))
+                    files_list.append(file_path[0])
     return files_list
 
 
