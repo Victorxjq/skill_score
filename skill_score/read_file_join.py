@@ -23,8 +23,8 @@ def extract_cv_info(line):
     id=line[0]
     info=json.loads(line[1])
     res={id:{'cv_tag':info['cv_tag']}}
-    return res
     print(res)
+    return res
 
 
 #load data
