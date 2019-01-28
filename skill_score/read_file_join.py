@@ -22,7 +22,7 @@ algorithm_file_path = '/basic_data/icdc/algorithms/20190115/'
 basic_file_path = '/basic_data/icdc/resumes_extras/20190115/'
 
 
-def extract_cv_info(line):
+def extract_cv_info_algorithm(line):
     line = line.split('\t')
     k_id = line[0]
     try:
@@ -37,9 +37,43 @@ def extract_cv_info(line):
     return res
 
 
+def extract_cv_info_basic(line):
+    line = line.split('\t')
+    k_id = line[0]
+    try:
+        info = json.loads(line[1])
+        if 'work' in info.keys():
+            # print(info['cv_tag'])
+            res = (k_id,{'work': info['work']})
+        else:
+            res = ''
+    except:
+        res = ''
+    return res
+
+
 # load data
 if __name__ == '__main__':
     sc = SparkContext(appName='join_cv')
-    test_path = '/basic_data/icdc/algorithms/20190115/icdc_20/data__fcca1aa1_41ca_4df3_bf56_feea812b5d5d'
-    sc.textFile(test_path).flatMap(extract_cv_info).saveAsTextFile('/user/kdd_xijunquan/test/test20190128.txt')
+    index=0
+    for file_path in get_files_list(algorithm_file_path):
+        if index==0:
+            index+=1
+            inp_all_algorithm=sc.textFile(file_path).flatMap(extract_cv_info_algorithm)
+        else:
+            tmp=sc.textFile(file_path).flatMap(extract_cv_info_algorithm)
+            inp_all_algorithm=inp_all_algorithm.union(tmp)
+            index+=1
+
+    index=0
+    for file_path in get_files_list(basic_file_path):
+        if index==0:
+            index+=1
+            inp_all_basic=sc.textFile(algorithm_file_path).flatMap(extract_cv_info_basic)
+        else:
+            tmp=sc.textFile(file_path).flatMap(extract_cv_info_basic)
+            inp_all_basic=inp_all_basic.union(tmp)
+            index+=1
+
+    inp_all_algorithm.join(inp_all_basic).saveAsTextFile('/user/kdd_xijunquan/cv_skill_score/')
     sc.stop()
