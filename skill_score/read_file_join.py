@@ -24,10 +24,9 @@ def extract_cv_info(line):
     info=json.loads(line[1])
     if 'cv_tag' in info.keys():
         res={id:{'cv_tag':info['cv_tag']}}
-        # print(res)
-        return res
     else:
-        pass
+        res = {id: {'cv_tag': ''}}
+    return res
 
 
 #load data
