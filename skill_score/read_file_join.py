@@ -31,9 +31,9 @@ def extract_cv_info(line):
             # print(info['cv_tag'])
             res = (k_id,{'cv_tag': info['cv_tag']})
         else:
-            res = 'miss'
+            res = ''
     except:
-        res = 'miss'
+        res = ''
     return res
 
 
