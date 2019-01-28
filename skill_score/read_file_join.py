@@ -60,6 +60,10 @@ if __name__ == '__main__':
     test1=sc.textFile(test_path1).flatMap(extract_cv_info_algorithm)
     test2=sc.textFile(test_path2).flatMap(extract_cv_info_algorithm)
     test1=test1.union(test2)
+    for x in test1.collect():
+        print(x)
+        if x=='':
+            print('this is a null string')
     # index=0
     # for file_path in get_files_list(algorithm_file_path):
     #     if index==0:
