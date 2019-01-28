@@ -55,25 +55,28 @@ def extract_cv_info_basic(line):
 # load data
 if __name__ == '__main__':
     sc = SparkContext(appName='join_cv')
-    index=0
-    for file_path in get_files_list(algorithm_file_path):
-        if index==0:
-            index+=1
-            inp_all_algorithm=sc.textFile(file_path).flatMap(extract_cv_info_algorithm)
-        else:
-            tmp=sc.textFile(file_path).flatMap(extract_cv_info_algorithm)
-            inp_all_algorithm=inp_all_algorithm.union(tmp)
-            index+=1
-
-    index=0
-    for file_path in get_files_list(basic_file_path):
-        if index==0:
-            index+=1
-            inp_all_basic=sc.textFile(algorithm_file_path).flatMap(extract_cv_info_basic)
-        else:
-            tmp=sc.textFile(file_path).flatMap(extract_cv_info_basic)
-            inp_all_basic=inp_all_basic.union(tmp)
-            index+=1
-
-    inp_all_algorithm.join(inp_all_basic).saveAsTextFile('/user/kdd_xijunquan/cv_skill_score/')
+    test_path='/basic_data/icdc/algorithms/20190115/icdc_0/data__ff0f1b40_5207_4f3c_83d0_8f03b7185372'
+    for x in sc.textFile(test_path).flatMap(extract_cv_info_algorithm).collectAsMap():
+        print(x)
+    # index=0
+    # for file_path in get_files_list(algorithm_file_path):
+    #     if index==0:
+    #         index+=1
+    #         inp_all_algorithm=sc.textFile(file_path).flatMap(extract_cv_info_algorithm)
+    #     else:
+    #         tmp=sc.textFile(file_path).flatMap(extract_cv_info_algorithm)
+    #         inp_all_algorithm=inp_all_algorithm.union(tmp)
+    #         index+=1
+    #
+    # index=0
+    # for file_path in get_files_list(basic_file_path):
+    #     if index==0:
+    #         index+=1
+    #         inp_all_basic=sc.textFile(algorithm_file_path).flatMap(extract_cv_info_basic)
+    #     else:
+    #         tmp=sc.textFile(file_path).flatMap(extract_cv_info_basic)
+    #         inp_all_basic=inp_all_basic.union(tmp)
+    #         index+=1
+    #
+    # inp_all_algorithm.join(inp_all_basic).saveAsTextFile('/user/kdd_xijunquan/cv_skill_score/')
     sc.stop()
