@@ -21,10 +21,13 @@ basic_file_path='/basic_data/icdc/resumes_extras/20190115/'
 def extract_cv_info(line):
     line=line.split('\t')
     id=line[0]
-    info=json.loads(line[1])
-    if 'cv_tag' in info.keys():
-        res={id:{'cv_tag':info['cv_tag']}}
-    else:
+    try:
+        info=json.loads(line[1])
+        if 'cv_tag' in info.keys():
+            res = {id: {'cv_tag': info['cv_tag']}}
+        else:
+            res = {id: {'cv_tag': ''}}
+    except:
         res = {id: {'cv_tag': ''}}
     return res
 
