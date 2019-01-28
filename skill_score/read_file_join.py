@@ -22,9 +22,12 @@ def extract_cv_info(line):
     line=line.split('\t')
     id=line[0]
     info=json.loads(line[1])
-    res={id:{'cv_tag':info['cv_tag']}}
-    print(res)
-    return res
+    if 'cv_tag' in info.keys():
+        res={id:{'cv_tag':info['cv_tag']}}
+        # print(res)
+        return res
+    else:
+        pass
 
 
 #load data
