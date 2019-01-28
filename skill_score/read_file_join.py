@@ -27,7 +27,7 @@ def extract_cv_info(line):
     id = line[0]
     try:
         info = json.loads(line[1])
-        if 'cv_tag' in info.keys():
+        if 'cv_tag' in info.keys() and info['cv_tag']!='':
             res = {id: {'cv_tag': info['cv_tag']}}
         else:
             res = 'miss'
@@ -40,6 +40,6 @@ def extract_cv_info(line):
 if __name__ == '__main__':
     sc = SparkContext(appName='join_cv')
     test_path = '/basic_data/icdc/algorithms/20190115/icdc_20/data__fcca1aa1_41ca_4df3_bf56_feea812b5d5d'
-    sc.textFile(test_path).flatMap(extract_cv_info).filter(lambda x: x!='miss').saveAsTextFile(
+    sc.textFile(test_path).flatMap(extract_cv_info).filter(lambda x: x=='miss').saveAsTextFile(
         '/user/kdd_xijunquan/test/test20190128.txt')
     sc.stop()
