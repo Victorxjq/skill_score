@@ -56,7 +56,7 @@ def extract_cv_info_basic(line):
 if __name__ == '__main__':
     sc = SparkContext(appName='join_cv')
     test_path='/basic_data/icdc/algorithms/20190115/icdc_0/data__ff0f1b40_5207_4f3c_83d0_8f03b7185372'
-    for x in sc.textFile(test_path).flatMap(extract_cv_info_algorithm).collectAsMap():
+    for x in sc.textFile(test_path).flatMap(extract_cv_info_algorithm).collect():
         print(x)
     # index=0
     # for file_path in get_files_list(algorithm_file_path):
