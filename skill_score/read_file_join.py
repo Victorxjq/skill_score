@@ -4,8 +4,10 @@ from pyspark.sql import SparkSession
 import json
 import os
 import re
+
+
 def get_files_list(root_path):
-    files_list=[]
+    files_list = []
     for dir_path in os.popen("""hadoop dfs -ls %s | awk  -F ' '  '{print $8}' """ % (root_path)).readlines():
         dir_path = dir_path.strip()
         if len(dir_path) != 0:
@@ -15,26 +17,29 @@ def get_files_list(root_path):
                 files_list.append(file_path[0])
     return files_list
 
-algorithm_file_path='/basic_data/icdc/algorithms/20190115/'
-basic_file_path='/basic_data/icdc/resumes_extras/20190115/'
+
+algorithm_file_path = '/basic_data/icdc/algorithms/20190115/'
+basic_file_path = '/basic_data/icdc/resumes_extras/20190115/'
+
 
 def extract_cv_info(line):
-    line=line.split('\t')
-    id=line[0]
+    line = line.split('\t')
+    id = line[0]
     try:
-        info=json.loads(line[1])
+        info = json.loads(line[1])
         if 'cv_tag' in info.keys():
             res = {id: {'cv_tag': info['cv_tag']}}
         else:
-            return None
+            res = 'miss'
     except:
-        return None
+        res = 'miss'
     return res
 
 
-#load data
+# load data
 if __name__ == '__main__':
     sc = SparkContext(appName='join_cv')
-    test_path='/basic_data/icdc/algorithms/20190115/icdc_20/data__fcca1aa1_41ca_4df3_bf56_feea812b5d5d'
-    sc.textFile(test_path).flatMap(extract_cv_info).filter(lambda x:x is not None) .saveAsTextFile('/user/kdd_xijunquan/test/test20190128.txt')
+    test_path = '/basic_data/icdc/algorithms/20190115/icdc_20/data__fcca1aa1_41ca_4df3_bf56_feea812b5d5d'
+    sc.textFile(test_path).flatMap(extract_cv_info).filter(lambda x: x!='miss').saveAsTextFile(
+        '/user/kdd_xijunquan/test/test20190128.txt')
     sc.stop()
