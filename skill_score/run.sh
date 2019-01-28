@@ -17,4 +17,4 @@ spark-submit \
     --executor-memory 1G \
     --executor-cores 1 \
     --num-executors 400 \
-    ./extract_jd_skill_lvl.py
+    ./read_file_join.py

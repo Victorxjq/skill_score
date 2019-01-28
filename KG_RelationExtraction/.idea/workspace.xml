@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="006a1a3f-2637-46a0-a7fe-3b71bf7821cd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../skill_score/run.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../skill_score/read_file_join.py" beforeDir="false" afterPath="$PROJECT_DIR$/../skill_score/read_file_join.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../skill_score/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../skill_score/run.sh" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
