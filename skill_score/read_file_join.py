@@ -55,34 +55,36 @@ def extract_cv_info_basic(line):
 # load data
 if __name__ == '__main__':
     sc = SparkContext(appName='join_cv')
-    test_path1='/basic_data/icdc/algorithms/20190115/icdc_0/data__ff0f1b40_5207_4f3c_83d0_8f03b7185372'
-    test_path2='/basic_data/icdc/algorithms/20190115/icdc_0/data__bee3f589_238a_44da_9a6a_de34e589ff1b'
-    test1=sc.textFile(test_path1).flatMap(extract_cv_info_algorithm)
-    test2=sc.textFile(test_path2).flatMap(extract_cv_info_algorithm)
-    test1=test1.union(test2)
-    for x in test1.collect():
-        print(x)
-        if x=='':
-            print('this is a null string')
-    # index=0
-    # for file_path in get_files_list(algorithm_file_path):
-    #     if index==0:
-    #         index+=1
-    #         inp_all_algorithm=sc.textFile(file_path).flatMap(extract_cv_info_algorithm)
-    #     else:
-    #         tmp=sc.textFile(file_path).flatMap(extract_cv_info_algorithm)
-    #         inp_all_algorithm=inp_all_algorithm.union(tmp)
-    #         index+=1
-    #
-    # index=0
-    # for file_path in get_files_list(basic_file_path):
-    #     if index==0:
-    #         index+=1
-    #         inp_all_basic=sc.textFile(algorithm_file_path).flatMap(extract_cv_info_basic)
-    #     else:
-    #         tmp=sc.textFile(file_path).flatMap(extract_cv_info_basic)
-    #         inp_all_basic=inp_all_basic.union(tmp)
-    #         index+=1
-    #
-    # inp_all_algorithm.join(inp_all_basic).saveAsTextFile('/user/kdd_xijunquan/cv_skill_score/')
+    # test_path1='/basic_data/icdc/algorithms/20190115/icdc_0/data__ff0f1b40_5207_4f3c_83d0_8f03b7185372'
+    # test_path2='/basic_data/icdc/algorithms/20190115/icdc_0/data__bee3f589_238a_44da_9a6a_de34e589ff1b'
+    # test1=sc.textFile(test_path1).flatMap(extract_cv_info_algorithm)
+    # test2=sc.textFile(test_path2).flatMap(extract_cv_info_algorithm)
+    # test1=test1.union(test2)
+    # for x in test1.collect():
+    #     print(x)
+    #     if x=='':
+    #         print('this is a null string')
+    index=0
+    for file_path in get_files_list(algorithm_file_path):
+        print(file_path)
+        if index==0:
+            index+=1
+            inp_all_algorithm=sc.textFile(file_path).flatMap(extract_cv_info_algorithm)
+        else:
+            tmp=sc.textFile(file_path).flatMap(extract_cv_info_algorithm)
+            inp_all_algorithm=inp_all_algorithm.union(tmp)
+            index+=1
+
+    index=0
+    for file_path in get_files_list(basic_file_path):
+        print(file_path)
+        if index==0:
+            index+=1
+            inp_all_basic=sc.textFile(algorithm_file_path).flatMap(extract_cv_info_basic)
+        else:
+            tmp=sc.textFile(file_path).flatMap(extract_cv_info_basic)
+            inp_all_basic=inp_all_basic.union(tmp)
+            index+=1
+
+    inp_all_algorithm.join(inp_all_basic).saveAsTextFile('/user/kdd_xijunquan/cv_skill_score/')
     sc.stop()
