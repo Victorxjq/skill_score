@@ -107,4 +107,5 @@ if __name__ == '__main__':
                     index += 1
     print('join task')
     inp_all_algorithm.join(inp_all_basic).saveAsTextFile('/user/kdd_xijunquan/cv_skill_score/')
+    print('completed')
     sc.stop()
