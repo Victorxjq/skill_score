@@ -4,7 +4,24 @@ from pyspark.sql import SparkSession
 import json
 import os
 import re
+import zlib
+import binascii
+import json
 
+
+def uncompress(s):
+    try:
+        txt = zlib.decompress(binascii.unhexlify(s))
+    except TypeError as e:
+        txt = "{}"
+    try:
+        json_obj = json.loads(txt, strict=False)
+        txt = json.dumps(json_obj, ensure_ascii=False)
+        if (json_obj == None):
+            txt = "{}"
+    except ValueError as e:
+        txt = "{}"
+    return txt
 
 def get_files_list(root_path):
     files_list = []
@@ -42,7 +59,7 @@ def extract_cv_info_basic(line):
     line = line.split('\t')
     k_id = line[0]
     try:
-        info = json.loads(line[1])
+        info = json.loads(uncompress(line[1]))
         if 'work' in info.keys():
             # print(info['cv_tag'])
             res = (k_id, {'work': info['work']})
