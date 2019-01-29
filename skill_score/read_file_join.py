@@ -7,6 +7,7 @@ import re
 import zlib
 import binascii
 import json
+import subprocess
 
 
 def uncompress(s):
@@ -84,25 +85,29 @@ if __name__ == '__main__':
     #         print('this is a null string')
     index = 0
     for file_path in get_files_list(algorithm_file_path):
-        if len(file_path)>0:
-            if index == 0:
-                inp_all_algorithm = sc.textFile(file_path).flatMap(extract_cv_info_algorithm)
-                index += 1
-            else:
-                tmp = sc.textFile(file_path).flatMap(extract_cv_info_algorithm)
-                inp_all_algorithm = inp_all_algorithm.union(tmp)
-                index += 1
+        cmd='hadoop fs -test -d %p'%algorithm_file_path
+        if subprocess.call(cmd,shell=True)==1:
+            if len(file_path)>0:
+                if index == 0:
+                    inp_all_algorithm = sc.textFile(file_path).flatMap(extract_cv_info_algorithm)
+                    index += 1
+                else:
+                    tmp = sc.textFile(file_path).flatMap(extract_cv_info_algorithm)
+                    inp_all_algorithm = inp_all_algorithm.union(tmp)
+                    index += 1
 
     index = 0
     for file_path in get_files_list(basic_file_path):
-        if len(file_path) > 0:
-            if index == 0:
-                inp_all_basic = sc.textFile(algorithm_file_path).flatMap(extract_cv_info_basic)
-                index += 1
-            else:
-                tmp = sc.textFile(file_path).flatMap(extract_cv_info_basic)
-                inp_all_basic = inp_all_basic.union(tmp)
-                index += 1
+        cmd = 'hadoop fs -test -d %p' % basic_file_path
+        if subprocess.call(cmd, shell=True) == 1:
+            if len(file_path) > 0:
+                if index == 0:
+                    inp_all_basic = sc.textFile(algorithm_file_path).flatMap(extract_cv_info_basic)
+                    index += 1
+                else:
+                    tmp = sc.textFile(file_path).flatMap(extract_cv_info_basic)
+                    inp_all_basic = inp_all_basic.union(tmp)
+                    index += 1
 
     inp_all_algorithm.join(inp_all_basic).saveAsTextFile('/user/kdd_xijunquan/cv_skill_score/')
     sc.stop()
