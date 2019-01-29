@@ -86,9 +86,11 @@ if __name__ == '__main__':
         if subprocess.call(cmd,shell=True)==1:
             if len(file_path)>0:
                 if index == 0:
+                    print(file_path)
                     inp_all_algorithm = sc.textFile(file_path).flatMap(extract_cv_info_algorithm)
                     index += 1
                 else:
+                    print(file_path)
                     tmp = sc.textFile(file_path).flatMap(extract_cv_info_algorithm)
                     inp_all_algorithm = inp_all_algorithm.union(tmp)
                     index += 1
