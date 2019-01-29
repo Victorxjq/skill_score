@@ -85,7 +85,7 @@ if __name__ == '__main__':
     #         print('this is a null string')
     index = 0
     for file_path in get_files_list(algorithm_file_path):
-        cmd='hadoop fs -test -d %p'%algorithm_file_path
+        cmd='hadoop fs -test -d %s' % algorithm_file_path
         if subprocess.call(cmd,shell=True)==1:
             if len(file_path)>0:
                 if index == 0:
@@ -98,7 +98,7 @@ if __name__ == '__main__':
 
     index = 0
     for file_path in get_files_list(basic_file_path):
-        cmd = 'hadoop fs -test -d %p' % basic_file_path
+        cmd = 'hadoop fs -test -d %s' % basic_file_path
         if subprocess.call(cmd, shell=True) == 1:
             if len(file_path) > 0:
                 if index == 0:
