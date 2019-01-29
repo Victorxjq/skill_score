@@ -82,7 +82,7 @@ if __name__ == '__main__':
     print('start load algorithm files')
     index = 0
     for file_path in get_files_list_single_layer(algorithm_file_path):
-        cmd='hadoop fs -test -d %s' % algorithm_file_path
+        cmd='hadoop fs -test -d %s' % file_path
         print(cmd)
         if subprocess.call(cmd,shell=True)==1:
             print(file_path)
@@ -99,7 +99,7 @@ if __name__ == '__main__':
     print('start load basic files')
     index = 0
     for file_path in get_files_list_single_layer(basic_file_path):
-        cmd = 'hadoop fs -test -d %s' % basic_file_path
+        cmd = 'hadoop fs -test -d %s' % file_path
         if subprocess.call(cmd, shell=True) == 1:
             if len(file_path) > 0:
                 if index == 0:
