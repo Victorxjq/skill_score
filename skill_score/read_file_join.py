@@ -110,11 +110,8 @@ if __name__ == '__main__':
     # inp_all_algorithm=inp_all_algorithm.filter((lambda x:x==''))
     # inp_all_basic = inp_all_basic.filter((lambda x: x == ''))
     print('algorithm:')
-    print('algorithm.keys:')
     inp_all_algorithm=inp_all_algorithm.collectAsMap()
     inp_all_basic=inp_all_basic.collectAsMap()
-    for val in inp_all_algorithm().values():
-        print(val)
     print('join task')
     for val in inp_all_algorithm.join(inp_all_basic).collect():
         print(val)
