@@ -108,8 +108,7 @@ if __name__ == '__main__':
                     inp_all_basic = inp_all_basic.union(tmp)
                     index += 1
     print('join task')
-    result=inp_all_algorithm.join(inp_all_basic)
-    for val in result.collect():
+    for val in inp_all_algorithm.join(inp_all_basic).collect():
         print(val)
     print('completed')
     sc.stop()
