@@ -107,9 +107,7 @@ if __name__ == '__main__':
                     tmp = sc.textFile(file_path).map(extract_cv_info_basic)
                     inp_all_basic = inp_all_basic.union(tmp)
                     index += 1
-    inp_all=inp_all_algorithm.union(inp_all_basic)
-    print('reduce')
-    for val in inp_all.groupByKey().collect():
-        print(val)
+    print('save to txt')
+    inp_all=inp_all_algorithm.union(inp_all_basic).groupByKey().saveAsTextFile('/user/kdd_xijunquan/cv_skill_score/')
     print('completed')
     sc.stop()
