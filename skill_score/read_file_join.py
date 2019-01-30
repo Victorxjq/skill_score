@@ -51,7 +51,7 @@ def extract_cv_info_algorithm(line):
         info = json.loads(line[1])
         if 'cv_tag' in info.keys():
             # print(info['cv_tag'])
-            res = [k_id, {'cv_tag': info['cv_tag']}]
+            res = {k_id: {'cv_tag': info['cv_tag']}}
         else:
             res = ''
     except:
@@ -66,7 +66,7 @@ def extract_cv_info_basic(line):
         info = json.loads(uncompress(line[1]))
         if 'work' in info.keys():
             # print(info['cv_tag'])
-            res = [k_id, {'work': info['work']}]
+            res = {k_id: {'work': info['work']}}
         else:
             res = ''
     except:
@@ -77,11 +77,12 @@ def extract_cv_info_basic(line):
 # load data
 if __name__ == '__main__':
     sc = SparkContext(appName='join_cv')
-    algorithm_file_path = '/basic_data/icdc/algorithms/20190115/icdc_0'
-    basic_file_path = '/basic_data/icdc/resumes_extras/20190115/icdc_0'
+    algorithm_file_path = '/basic_data/icdc/algorithms/20190115/icdc_0/data__ff0f1b40_5207_4f3c_83d0_8f03b7185372'
+    basic_file_path = '/basic_data/icdc/resumes_extras/20190115/icdc_0/data__ffd132e3_a01d_4ed3_bad0_98f9b8b069c4'
     print('start load algorithm files')
     index = 0
-    for file_path in get_files_list_single_layer(algorithm_file_path):
+    # for file_path in get_files_list_single_layer(algorithm_file_path):
+    for file_path in ['/basic_data/icdc/algorithms/20190115/icdc_0/data__ff0f1b40_5207_4f3c_83d0_8f03b7185372']:
         cmd='hadoop fs -test -d %s' % file_path
         if subprocess.call(cmd,shell=True)==1:
             if len(file_path)>0:
@@ -94,7 +95,8 @@ if __name__ == '__main__':
                     index += 1
     print('start load basic files')
     index = 0
-    for file_path in get_files_list_single_layer(basic_file_path):
+    # for file_path in get_files_list_single_layer(basic_file_path):
+    for file_path in ['/basic_data/icdc/resumes_extras/20190115/icdc_0/data__ffd132e3_a01d_4ed3_bad0_98f9b8b069c4']:
         cmd = 'hadoop fs -test -d %s' % file_path
         if subprocess.call(cmd, shell=True) == 1:
             if len(file_path) > 0:
