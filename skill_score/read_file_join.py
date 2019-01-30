@@ -107,6 +107,12 @@ if __name__ == '__main__':
                     tmp = sc.textFile(file_path).flatMap(extract_cv_info_basic)
                     inp_all_basic = inp_all_basic.union(tmp)
                     index += 1
+    print('print algorithm')
+    for val in inp_all_algorithm.collect():
+        print(val)
+    print('print basic')
+    for val in inp_all_basic.collect():
+        print(val)
     print('join task')
     for val in inp_all_algorithm.join(inp_all_basic).collect():
         print(val)
