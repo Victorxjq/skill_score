@@ -51,11 +51,11 @@ def extract_cv_info_algorithm(line):
         info = json.loads(line[1])
         if 'cv_tag' in info.keys():
             # print(info['cv_tag'])
-            res = (k_id,{'cv_tag': info['cv_tag']})
+            res = {k_id:{'cv_tag': info['cv_tag']}}
         else:
-            res = ''
+            res = {k_id:''}
     except:
-        res = ''
+        res = {k_id: ''}
     return res
 
 
@@ -68,9 +68,9 @@ def extract_cv_info_basic(line):
             # print(info['cv_tag'])
             res = (k_id, {'work': info['work']})
         else:
-            res = ''
+            res = {k_id: ''}
     except:
-        res = ''
+        res = {k_id: ''}
     return res
 
 
@@ -87,10 +87,10 @@ if __name__ == '__main__':
         if subprocess.call(cmd,shell=True)==1:
             if len(file_path)>0:
                 if index == 0:
-                    inp_all_algorithm = sc.textFile(file_path).flatMap(extract_cv_info_algorithm)
+                    inp_all_algorithm = sc.textFile(file_path).Map(extract_cv_info_algorithm)
                     index += 1
                 else:
-                    tmp = sc.textFile(file_path).flatMap(extract_cv_info_algorithm)
+                    tmp = sc.textFile(file_path).Map(extract_cv_info_algorithm)
                     inp_all_algorithm = inp_all_algorithm.union(tmp)
                     index += 1
     print('start load basic files')
@@ -101,10 +101,10 @@ if __name__ == '__main__':
         if subprocess.call(cmd, shell=True) == 1:
             if len(file_path) > 0:
                 if index == 0:
-                    inp_all_basic = sc.textFile(file_path).flatMap(extract_cv_info_basic)
+                    inp_all_basic = sc.textFile(file_path).Map(extract_cv_info_basic)
                     index += 1
                 else:
-                    tmp = sc.textFile(file_path).flatMap(extract_cv_info_basic)
+                    tmp = sc.textFile(file_path).Map(extract_cv_info_basic)
                     inp_all_basic = inp_all_basic.union(tmp)
                     index += 1
     # inp_all_algorithm=inp_all_algorithm.filter((lambda x:x==''))
