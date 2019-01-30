@@ -117,7 +117,7 @@ if __name__ == '__main__':
                     index += 1
     print('save to txt')
     # inp_all_algorithm.union(inp_all_basic).groupByKey().saveAsTextFile('/user/kdd_xijunquan/cv_skill_score/')
-    for val in inp_all_algorithm.union(inp_all_basic).groupByKey().mapValues(iterate_r()).collect():
+    for val in inp_all_algorithm.union(inp_all_basic).groupByKey().mapValues(iterate_r).collect():
         print(val)
     print('completed')
     sc.stop()
