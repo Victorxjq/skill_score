@@ -59,7 +59,7 @@ def extract_cv_info_algorithm(line):
         info = json.loads(line[1])
         if 'cv_tag' in info.keys():
             # print(info['cv_tag'])
-            res = (k_id,info['cv_tag'])
+            res = (k_id,{'cv_tag':info['cv_tag']})
         else:
             res = (k_id,'')
     except:
@@ -74,7 +74,7 @@ def extract_cv_info_basic(line):
         info = json.loads(uncompress(line[1]))
         if 'work' in info.keys():
             # print(info['cv_tag'])
-            res = (k_id,info['work'])
+            res = (k_id,{'work':info['work']})
         else:
             res = (k_id, '')
     except:
@@ -116,7 +116,7 @@ if __name__ == '__main__':
                     inp_all_basic = inp_all_basic.union(tmp)
                     index += 1
     print('save to txt')
-    inp_all_algorithm.union(inp_all_basic).groupByKey().mapValues(iterate_r).saveAsTextFile('/user/kdd_xijunquan/cv_skill_score/')
+    inp_all_algorithm.union(inp_all_basic).groupByKey().mapValues(list).saveAsTextFile('/user/kdd_xijunquan/cv_skill_score/')
     # for val in inp_all_algorithm.union(inp_all_basic).groupByKey().mapValues(iterate_r).collect():
     #     print(val)
     print('completed')
