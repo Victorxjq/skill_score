@@ -24,6 +24,14 @@ def uncompress(s):
         txt = "{}"
     return txt
 
+def iterate_r(iterable):
+    r = []
+    for v1_iterable in iterable:
+        for v2 in v1_iterable:
+            r.append(v2)
+
+    return tuple(r)
+
 def get_files_list(root_path):
     files_list = []
     for dir_path in os.popen("""hadoop dfs -ls %s | awk  -F ' '  '{print $8}' """ % (root_path)).readlines():
@@ -108,6 +116,8 @@ if __name__ == '__main__':
                     inp_all_basic = inp_all_basic.union(tmp)
                     index += 1
     print('save to txt')
-    inp_all=inp_all_algorithm.union(inp_all_basic).groupByKey().saveAsTextFile('/user/kdd_xijunquan/cv_skill_score/')
+    # inp_all_algorithm.union(inp_all_basic).groupByKey().saveAsTextFile('/user/kdd_xijunquan/cv_skill_score/')
+    for val in inp_all_algorithm.union(inp_all_basic).groupByKey().mapValues(iterate_r()).collect():
+        print(val)
     print('completed')
     sc.stop()
