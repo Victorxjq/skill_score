@@ -64,7 +64,6 @@ def extract_cv_info_basic(line):
     k_id = line[0]
     try:
         info = json.loads(uncompress(line[1]))
-        print(info)
         if 'work' in info.keys():
             # print(info['cv_tag'])
             res = [k_id, {'work': info['work']}]
@@ -108,10 +107,6 @@ if __name__ == '__main__':
                     tmp = sc.textFile(file_path).flatMap(extract_cv_info_basic)
                     inp_all_basic = inp_all_basic.union(tmp)
                     index += 1
-    print('print algorithm')
-    print('print basic')
-    for val in inp_all_basic.collect():
-        print(val)
     print('join task')
     for val in inp_all_algorithm.join(inp_all_basic).collect():
         print(val)
