@@ -59,7 +59,7 @@ def extract_cv_info_algorithm(line):
         info = json.loads(line[1])
         if 'cv_tag' in info.keys():
             # print(info['cv_tag'])
-            res = (k_id,{'cv_tag': info['cv_tag']})
+            res = (k_id,info['cv_tag'])
         else:
             res = (k_id,'')
     except:
@@ -74,7 +74,7 @@ def extract_cv_info_basic(line):
         info = json.loads(uncompress(line[1]))
         if 'work' in info.keys():
             # print(info['cv_tag'])
-            res = (k_id, {'work': info['work']})
+            res = (k_id,info['work'])
         else:
             res = (k_id, '')
     except:
