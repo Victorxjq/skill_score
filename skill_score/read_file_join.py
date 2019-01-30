@@ -102,15 +102,13 @@ if __name__ == '__main__':
         if subprocess.call(cmd, shell=True) == 1:
             if len(file_path) > 0:
                 if index == 0:
-                    inp_all_basic = sc.textFile(algorithm_file_path).flatMap(extract_cv_info_basic)
+                    inp_all_basic = sc.textFile(file_path).flatMap(extract_cv_info_basic)
                     index += 1
                 else:
                     tmp = sc.textFile(file_path).flatMap(extract_cv_info_basic)
                     inp_all_basic = inp_all_basic.union(tmp)
                     index += 1
     print('print algorithm')
-    for val in inp_all_algorithm.collect():
-        print(val)
     print('print basic')
     for val in inp_all_basic.collect():
         print(val)
