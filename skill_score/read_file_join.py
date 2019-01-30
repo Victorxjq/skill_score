@@ -77,12 +77,12 @@ def extract_cv_info_basic(line):
 # load data
 if __name__ == '__main__':
     sc = SparkContext(appName='join_cv')
-    algorithm_file_path = '/basic_data/icdc/algorithms/20190115/icdc_0/data__ff0f1b40_5207_4f3c_83d0_8f03b7185372'
-    basic_file_path = '/basic_data/icdc/resumes_extras/20190115/icdc_0/data__ffd132e3_a01d_4ed3_bad0_98f9b8b069c4'
+    algorithm_file_path = '/basic_data/icdc/algorithms/20190115/icdc_0'
+    basic_file_path = '/basic_data/icdc/resumes_extras/20190115/icdc_0'
     print('start load algorithm files')
     index = 0
-    # for file_path in get_files_list_single_layer(algorithm_file_path):
-    for file_path in ['/basic_data/icdc/algorithms/20190115/icdc_0/data__ff0f1b40_5207_4f3c_83d0_8f03b7185372']:
+    for file_path in get_files_list_single_layer(algorithm_file_path):
+    # for file_path in ['/basic_data/icdc/algorithms/20190115/icdc_0/data__ff0f1b40_5207_4f3c_83d0_8f03b7185372']:
         cmd='hadoop fs -test -d %s' % file_path
         if subprocess.call(cmd,shell=True)==1:
             if len(file_path)>0:
@@ -95,8 +95,8 @@ if __name__ == '__main__':
                     index += 1
     print('start load basic files')
     index = 0
-    # for file_path in get_files_list_single_layer(basic_file_path):
-    for file_path in ['/basic_data/icdc/resumes_extras/20190115/icdc_0/data__ffd132e3_a01d_4ed3_bad0_98f9b8b069c4']:
+    for file_path in get_files_list_single_layer(basic_file_path):
+    # for file_path in ['/basic_data/icdc/resumes_extras/20190115/icdc_0/data__ffd132e3_a01d_4ed3_bad0_98f9b8b069c4']:
         cmd = 'hadoop fs -test -d %s' % file_path
         if subprocess.call(cmd, shell=True) == 1:
             if len(file_path) > 0:
@@ -107,11 +107,6 @@ if __name__ == '__main__':
                     tmp = sc.textFile(file_path).map(extract_cv_info_basic)
                     inp_all_basic = inp_all_basic.union(tmp)
                     index += 1
-    # inp_all_algorithm=inp_all_algorithm.filter((lambda x:x==''))
-    # inp_all_basic = inp_all_basic.filter((lambda x: x == ''))
-    print('algorithm:')
-    inp_all_algorithm=inp_all_algorithm.collectAsMap()
-    inp_all_basic=inp_all_basic.collectAsMap()
     print('join task')
     for val in inp_all_algorithm.join(inp_all_basic).collect():
         print(val)
