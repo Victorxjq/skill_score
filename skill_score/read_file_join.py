@@ -106,6 +106,8 @@ if __name__ == '__main__':
                     inp_all_basic = inp_all_basic.union(tmp)
                     index += 1
     print('join task')
-    inp_all_algorithm.join(inp_all_basic).saveAsTextFile('/user/kdd_xijunquan/cv_skill_score/')
+    result=inp_all_algorithm.join(inp_all_basic)
+    for val in result.collect():
+        print(val)
     print('completed')
     sc.stop()
