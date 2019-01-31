@@ -14,6 +14,7 @@ spark-submit \
     --conf spark.yarn.dist.archives=$HDFS_PYTHON_PATH"#"$EXECUTOR_PYTHON_ENV \
     --master yarn \
     --deploy-mode client \
+    --driver-memory 4G \
     --executor-memory 4G \
     --executor-cores 1 \
     --num-executors 100 \
