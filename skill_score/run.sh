@@ -16,5 +16,5 @@ spark-submit \
     --deploy-mode client \
     --executor-memory 4G \
     --executor-cores 1 \
-    --num-executors 50 \
+    --num-executors 100 \
     ./read_file_join.py
