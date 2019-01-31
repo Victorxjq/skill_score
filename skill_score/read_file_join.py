@@ -84,11 +84,11 @@ def extract_cv_info_basic(line):
 
 # load data
 if __name__ == '__main__':
+    sc = SparkContext(appName='join_cv')
     for val in range(0,32):
         algorithm_file_path = '/basic_data/icdc/algorithms/20190115/icdc_%s'%str(val)
         # print(algorithm_file_path)
         basic_file_path = '/basic_data/icdc/resumes_extras/20190115/icdc_%s'%str(val)
-        sc = SparkContext(appName='join_cv')
         print('start load algorithm files')
         index = 0
         for file_path in get_files_list(algorithm_file_path):
@@ -120,4 +120,4 @@ if __name__ == '__main__':
         print('save to txt')
         inp_all_algorithm.union(inp_all_basic).groupByKey().mapValues(list).saveAsTextFile('/user/kdd_xijunquan/cv_skill_score/icdc_%s'%str(val))
         print('batch%s,completed'%str(val))
-        sc.stop()
+    sc.stop()
