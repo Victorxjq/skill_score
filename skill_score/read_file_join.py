@@ -118,7 +118,9 @@ if __name__ == '__main__':
                         tmp = sc.textFile(file_path).map(extract_cv_info_basic)
                         inp_all_basic = inp_all_basic.union(tmp)
                         index += 1
+        inp_all=inp_all_algorithm.union(inp_all_basic)
         print('save to txt')
-        inp_all_algorithm.union(inp_all_basic).groupByKey().mapValues(list).saveAsTextFile('/user/kdd_xijunquan/cv_skill_score/icdc_%s'%str(val))
+        result=inp_all.groupByKey().mapValues(list)
+        result.saveAsTextFile('/user/kdd_xijunquan/cv_skill_score/icdc_%s'%str(val))
         print('batch %s,completed'%str(val))
         sc.stop()
