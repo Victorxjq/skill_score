@@ -122,6 +122,7 @@ if __name__ == '__main__':
         print('Group_by_keys:')
         result=inp_all.groupByKey().mapValues(list)
         print('save to txt:')
+        # result.saveAsTextFile('/user/kdd_xijunquan/cv_skill_score/test')
         result.saveAsTextFile('/user/kdd_xijunquan/cv_skill_score/icdc_%s'%str(val))
         print('batch %s,completed'%str(val))
         sc.stop()
