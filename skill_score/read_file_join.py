@@ -97,7 +97,7 @@ def add(a, b):
 
 # load data
 if __name__ == '__main__':
-    for val in range(0, 1):
+    for val in range(0, 32):
         sc = SparkContext(appName='join_cv')
         algorithm_file_path = '/basic_data/icdc/algorithms/20190115/icdc_%s' % str(val)
         # print(algorithm_file_path)
@@ -125,8 +125,8 @@ if __name__ == '__main__':
                     tmp = sc.textFile(bas_file_path).map(extract_cv_info_basic).filter(lambda x:x!='null')
                     inp_all = inp_all.union(tmp)
         print('Group_by_keys:')
-        for inp in inp_all.take(10):
-            print(inp)
+        # for inp in inp_all.take(10):
+        #     print(inp)
         result = inp_all.reduceByKey(add)
         # result=inp_all.groupByKey().mapValues(list)
         print('save to txt:')
@@ -135,8 +135,8 @@ if __name__ == '__main__':
         # cmd = 'hadoop fs -test -d %s' % output_path
         # if subprocess.call(cmd, shell=True) == 1:
         #     subprocess.call('hadoop fs -rm -r %s' % output_path)
-        for res in result.take(10):
-            print(res)
-        # result.saveAsTextFile(output_path)
+        # for res in result.take(10):
+        #     print(res)
+        result.saveAsTextFile(output_path)
         print('batch %s,completed' % str(val))
         sc.stop()
