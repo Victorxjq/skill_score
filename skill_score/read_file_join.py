@@ -113,7 +113,8 @@ if __name__ == '__main__':
                     tmp = sc.textFile(file_path).map(extract_cv_info_basic)
                     inp_all = inp_all.union(tmp)
         print('Group_by_keys:')
-        result=inp_all.groupByKey().mapValues(list)
+        result=inp_all.partitionBy(1000).combineByKey().mapValues(list)
+        # result=inp_all.groupByKey().mapValues(list)
         print('save to txt:')
         # output_path='/user/kdd_xijunquan/cv_skill_score/test'
         output_path='/user/kdd_xijunquan/cv_skill_score/icdc_%s'%str(val)
