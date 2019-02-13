@@ -111,10 +111,10 @@ if __name__ == '__main__':
             if subprocess.call(cmd, shell=True) == 1:
                 if len(alg_file_path) > 0:
                     if index == 0:
-                        inp_all = sc.textFile(alg_file_path).map(extract_cv_info_algorithm).filter(lambda x:x=='null')
+                        inp_all = sc.textFile(alg_file_path).map(extract_cv_info_algorithm).filter(lambda x:x!='null')
                         index += 1
                     else:
-                        tmp = sc.textFile(alg_file_path).map(extract_cv_info_algorithm).filter(lambda x:x=='null')
+                        tmp = sc.textFile(alg_file_path).map(extract_cv_info_algorithm).filter(lambda x:x!='null')
                         inp_all = inp_all.union(tmp)
                         index += 1
         print('start load basic files')
@@ -123,7 +123,7 @@ if __name__ == '__main__':
             cmd = 'hadoop fs -test -d %s' % bas_file_path
             if subprocess.call(cmd, shell=True) == 1:
                 if len(bas_file_path) > 0:
-                    tmp = sc.textFile(bas_file_path).map(extract_cv_info_basic).filter(lambda x:x=='null')
+                    tmp = sc.textFile(bas_file_path).map(extract_cv_info_basic).filter(lambda x:x!='null')
                     inp_all = inp_all.union(tmp)
         print('Group_by_keys:')
         for inp in inp_all.take(10):
