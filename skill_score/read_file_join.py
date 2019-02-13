@@ -59,6 +59,7 @@ def extract_cv_info_algorithm(line):
     line = line.split('\t')
     k_id = line[0]
     print(k_id)
+    print(line)
     try:
         info = json.loads(line[1])
         if 'cv_tag' in info.keys():
