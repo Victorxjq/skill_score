@@ -58,33 +58,36 @@ def get_files_list_single_layer(root_path):
 def extract_cv_info_algorithm(line):
     line = line.split('\t')
     k_id = line[0]
-    if len(k_id)>15:
-        print(k_id)
-        print(line)
-    try:
-        info = json.loads(line[1])
-        if 'cv_tag' in info.keys():
-            # print(info['cv_tag'])
-            res = (k_id, {'cv_tag': info['cv_tag']})
-        else:
-            res = (k_id, '')
-    except:
-        res = (k_id, '')
+    if len(k_id)<15:
+        try:
+            info = json.loads(line[1])
+            if 'cv_tag' in info.keys() and info['cv_tag']!='':
+                # print(info['cv_tag'])
+                res = (k_id, {'cv_tag': info['cv_tag']})
+            else:
+                res = 'null'
+        except:
+            res ='null'
+    else:
+        res='null'
     return res
 
 
 def extract_cv_info_basic(line):
     line = line.split('\t')
     k_id = line[0]
-    try:
-        info = json.loads(uncompress(line[1]))
-        if 'work' in info.keys():
-            # print(info['cv_tag'])
-            res = (k_id, {'work': info['work']})
-        else:
-            res = (k_id, '')
-    except:
-        res = (k_id, '')
+    if len(k_id) < 15:
+        try:
+            info = json.loads(uncompress(line[1]))
+            if 'work' in info.keys() and info['work'] !='':
+                # print(info['cv_tag'])
+                res = (k_id, {'work': info['work']})
+            else:
+                res = 'null'
+        except:
+            res = 'null'
+    else:
+        res='null'
     return res
 
 
@@ -108,10 +111,10 @@ if __name__ == '__main__':
             if subprocess.call(cmd, shell=True) == 1:
                 if len(alg_file_path) > 0:
                     if index == 0:
-                        inp_all = sc.textFile(alg_file_path).map(extract_cv_info_algorithm).filter(lambda x:x[1]=='')
+                        inp_all = sc.textFile(alg_file_path).map(extract_cv_info_algorithm).filter(lambda x:x=='null')
                         index += 1
                     else:
-                        tmp = sc.textFile(alg_file_path).map(extract_cv_info_algorithm).filter(lambda x:x[1]=='')
+                        tmp = sc.textFile(alg_file_path).map(extract_cv_info_algorithm).filter(lambda x:x=='null')
                         inp_all = inp_all.union(tmp)
                         index += 1
         print('start load basic files')
@@ -120,7 +123,7 @@ if __name__ == '__main__':
             cmd = 'hadoop fs -test -d %s' % bas_file_path
             if subprocess.call(cmd, shell=True) == 1:
                 if len(bas_file_path) > 0:
-                    tmp = sc.textFile(bas_file_path).map(extract_cv_info_basic).filter(lambda x:x[1]=='')
+                    tmp = sc.textFile(bas_file_path).map(extract_cv_info_basic).filter(lambda x:x=='null')
                     inp_all = inp_all.union(tmp)
         print('Group_by_keys:')
         for inp in inp_all.take(10):
