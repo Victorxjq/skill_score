@@ -117,9 +117,9 @@ if __name__ == '__main__':
         print('save to txt:')
         # output_path='/user/kdd_xijunquan/cv_skill_score/test'
         output_path='/user/kdd_xijunquan/cv_skill_score/icdc_%s'%str(val)
-        cmd = 'hadoop fs -test -d %s' % output_path
-        if subprocess.call(cmd, shell=True) == 1:
-            subprocess.call('hadoop fs -rm -r %s' % output_path)
+        # cmd = 'hadoop fs -test -d %s' % output_path
+        # if subprocess.call(cmd, shell=True) == 1:
+        #     subprocess.call('hadoop fs -rm -r %s' % output_path)
         result.saveAsTextFile(output_path)
         print('batch %s,completed'%str(val))
         sc.stop()
