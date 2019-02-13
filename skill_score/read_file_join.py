@@ -73,6 +73,7 @@ def extract_cv_info_algorithm(line):
 def extract_cv_info_basic(line):
     line = line.split('\t')
     k_id = line[0]
+    print(k_id)
     try:
         info = json.loads(uncompress(line[1]))
         if 'work' in info.keys():
