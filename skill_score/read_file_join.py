@@ -58,8 +58,9 @@ def get_files_list_single_layer(root_path):
 def extract_cv_info_algorithm(line):
     line = line.split('\t')
     k_id = line[0]
-    print(k_id)
-    print(line)
+    if len(k_id)>15:
+        print(k_id)
+        print(line)
     try:
         info = json.loads(line[1])
         if 'cv_tag' in info.keys():
