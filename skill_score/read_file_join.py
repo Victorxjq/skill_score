@@ -98,7 +98,7 @@ def add(a, b):
 # load data
 if __name__ == '__main__':
     for val in range(0, 32):
-        sc = SparkContext(appName='join_cv')
+        sc = SparkContext(appName='join_cv_all')
         algorithm_file_path = '/basic_data/icdc/algorithms/20190115/icdc_%s' % str(val)
         # print(algorithm_file_path)
         basic_file_path = '/basic_data/icdc/resumes_extras/20190115/icdc_%s' % str(val)
