@@ -100,7 +100,6 @@ if __name__ == '__main__':
     for val in range(0, 1):
         sc = SparkContext(appName='join_cv_all')
         algorithm_file_path = '/basic_data/icdc/algorithms/20190115/icdc_%s' % str(val)
-        # print(algorithm_file_path)
         basic_file_path = '/basic_data/icdc/resumes_extras/20190115/icdc_%s' % str(val)
         print('start load algorithm files')
         index = 0
