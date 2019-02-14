@@ -125,7 +125,7 @@ if __name__ == '__main__':
                     tmp = sc.textFile(bas_file_path).map(extract_cv_info_basic).filter(lambda x:x!='null' or x!=[])
                     inp_all = inp_all.union(tmp)
         print('Group_by_keys:')
-        result = inp_all.sortByKey(ascending=True)
+        result = inp_all.sortByKey(ascending=True).reduceByKey(add)
         # result=inp_all.groupByKey().mapValues(list)
         print('save to txt:')
         # output_path='/user/kdd_xijunquan/cv_skill_score/test'
