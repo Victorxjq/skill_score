@@ -127,10 +127,6 @@ if __name__ == '__main__':
         print('Group_by_keys:')
         for val in inp_all.take(10):
             print(val)
-        for key in inp_all.keys():
-            print(key)
-        for val in inp_all.values():
-            print(val)
         result = inp_all.sortByKey(ascending=True).reduceByKey(add)
         # result=inp_all.groupByKey().mapValues(list)
         print('save to txt:')
