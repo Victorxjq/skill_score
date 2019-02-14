@@ -125,6 +125,8 @@ if __name__ == '__main__':
                     tmp = sc.textFile(bas_file_path).map(extract_cv_info_basic).filter(lambda x:x!='null')
                     inp_all = inp_all.union(tmp)
         print('Group_by_keys:')
+        for val in inp_all.take(10):
+            print(val)
         for key in inp_all.keys():
             print(key)
         for val in inp_all.values():
