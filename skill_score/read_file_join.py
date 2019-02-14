@@ -123,8 +123,6 @@ if __name__ == '__main__':
             if subprocess.call(cmd, shell=True) == 1:
                 if len(bas_file_path) > 0:
                     tmp = sc.textFile(bas_file_path).map(extract_cv_info_basic).filter(lambda x:x!='null')
-                    for tmpin in tmp.take(10):
-                        print(tmpin)
                     inp_all = inp_all.union(tmp)
         print('Group_by_keys:')
         result = inp_all.reduceByKey(add)
@@ -136,7 +134,7 @@ if __name__ == '__main__':
         # if subprocess.call(cmd, shell=True) == 1:
         #     subprocess.call('hadoop fs -rm -r %s' % output_path)
         for res in result.take(30):
-            print(res)
+            print(res[1])
         # result.saveAsTextFile(output_path)
         print('batch %s,completed' % str(val))
         sc.stop()
