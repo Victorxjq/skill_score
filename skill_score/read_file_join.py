@@ -133,8 +133,8 @@ if __name__ == '__main__':
         # cmd = 'hadoop fs -test -d %s' % output_path
         # if subprocess.call(cmd, shell=True) == 1:
         #     subprocess.call('hadoop fs -rm -r %s' % output_path)
-        for val in result.take(100):
-            print(val)
+        for res_val in result.take(100):
+            print(res_val)
         # result.saveAsTextFile(output_path)
         print('batch %s,completed' % str(val))
         sc.stop()
