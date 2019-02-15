@@ -58,18 +58,18 @@ def get_files_list_single_layer(root_path):
 def extract_cv_info_algorithm(line):
     line = line.split('\t')
     k_id = line[0]
-    if len(k_id)<15:
+    if len(k_id) < 15:
         try:
             info = json.loads(line[1])
-            if 'cv_tag' in info.keys() and info['cv_tag']!='':
+            if 'cv_tag' in info.keys() and info['cv_tag'] != '':
                 # print(info['cv_tag'])
-                res = (k_id, str({'cv_tag':info['cv_tag']}))
+                res = (k_id, {'cv_tag': info['cv_tag']})
             else:
                 res = 'null'
         except:
-            res ='null'
+            res = 'null'
     else:
-        res='null'
+        res = 'null'
     return res
 
 
@@ -79,15 +79,15 @@ def extract_cv_info_basic(line):
     if len(k_id) < 15:
         try:
             info = json.loads(uncompress(line[1]))
-            if 'work' in info.keys() and info['work'] !='':
+            if 'work' in info.keys() and info['work'] != '':
                 # print(info['cv_tag'])
-                res = (k_id, str({'work':info['work']}))
+                res = (k_id, {'work': info['work']})
             else:
                 res = 'null'
         except:
             res = 'null'
     else:
-        res='null'
+        res = 'null'
     return res
 
 
@@ -98,26 +98,14 @@ def add(a, b):
 # load data
 if __name__ == '__main__':
     sc = SparkContext(appName='join_cv_all')
-    # algorithm_file_path = '/basic_data/icdc/algorithms/20190115/icdc_%s' % str(val)
     algorithm_file_path = '/basic_data/icdc/algorithms/20190115/*'
-    # basic_file_path = '/basic_data/icdc/resumes_extras/20190115/icdc_%s' % str(val)
     basic_file_path = '/basic_data/icdc/resumes_extras/20190115/*'
     print('start load algorithm files')
-    inp_algo=sc.textFile(algorithm_file_path).map(extract_cv_info_algorithm).filter(lambda x: x != 'null' or x != [])
+    inp_algo = sc.textFile(algorithm_file_path).map(extract_cv_info_algorithm).filter(lambda x: x != 'null' or x != [])
     print('start load basic files')
-    inp_basic = sc.textFile(basic_file_path).map(extract_cv_info_basic).filter(lambda x:x!='null' or x!=[])
+    inp_basic = sc.textFile(basic_file_path).map(extract_cv_info_basic).filter(lambda x: x != 'null' or x != [])
     print('Group_by_keys:')
-    result=inp_algo.join(inp_basic)
-    # result = inp_all.sortByKey(ascending=True).reduceByKey(add)
-    # result=inp_all.groupByKey().mapValues(list)
-    print('save to txt:')
-    # output_path='/user/kdd_xijunquan/cv_skill_score/test'
     output_path = '/user/kdd_xijunquan/cv_skill_score/icdc'
-    # cmd = 'hadoop fs -test -d %s' % output_path
-    # if subprocess.call(cmd, shell=True) == 1:
-    #     subprocess.call('hadoop fs -rm -r %s' % output_path)
-    # for res_val in result.take(100):
-    #     print(res_val)
-    result.saveAsTextFile(output_path)
+    result = inp_basic.join(inp_algo).saveAsTextFile(output_path)
     print('batch,completed')
     sc.stop()
