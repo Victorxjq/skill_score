@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DRIVER_PYTHON_BIN="/opt/userhome/kdd_xijunquan/anaconda3/envs/python36/bin/python3.6"
+DRIVER_PYTHON_BIN="/opt/userhome/kdd_xijunquan/anaconda3/envs/python36/bin/python"
 
 HDFS_PYTHON_PATH="hdfs:///user/kdd_baiyongbin/python/python36.zip"
 
