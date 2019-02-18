@@ -147,7 +147,7 @@ class RegexExtractor(object):
         res = []
         rule = re.compile(u"((熟练|熟悉|精通|了解|擅长|熟习|知道|理解|熟知|参与|具有|具备|掌握|应用|运用|使用)+)([\\s\\S]*?)[。|;|；|!|\\n]")
         tmp = dict()
-        tmp["jd_tags"] = data.get("jd_tags")
+        tmp["cv_tag"] = data.get("cv_tag")
         tmp["id"] = data.get("id")
         tmp["skill_lvl_pair"] = []
         rt = rule.findall(line)
@@ -162,16 +162,16 @@ class RegexExtractor(object):
 g_tool_regex_extractor = RegexExtractor()
 
 
-class JDFieldExtractor(object):
-    def __init__(self, fields):
-        self.fields = fields
+# class CVFieldExtractor(object):
+#     def __init__(self, fields):
+#         self.fields = fields
+#
+#     def __call__(self, data):
+#         res = {field: data.get(field, None) for field in self.fields}
+#         return res
 
-    def __call__(self, data):
-        res = {field: data.get(field, None) for field in self.fields}
-        return res
 
-
-g_jd_desc_req_extractor = JDFieldExtractor(['cv_feature', 'cv_entity'])
+# g_cv_desc_req_extractor = CVFieldExtractor(['cv_tag'])
 
 
 def decode_escape(_line):
@@ -179,56 +179,54 @@ def decode_escape(_line):
     return _line
 
 
-def extract_jd_info(line):
-    data = json.loads(line)
-    res = []
-    for v in g_jd_desc_req_extractor(data).values():
-        if v:
-            res.extend(re.split('\n', v))
-    result = [{"id": data.get("id"), "jd_tags": data.get("jd_tags"), "data": item} for item in res]
+def extract_cv_info(line):
+    # data = json.loads(line[1])
+    # res = []
+    # for v in g_cv_desc_req_extractor(data).values():
+    #     if v:
+    #         res.extend(re.split('\n', v))
+    result = [{"id":line[0], "cv_tag": line[1][1], "data": line[1][0]}]
     return result
 
 
-def get_match_sentence(extract_jd_skill):
-    assert isinstance(extract_jd_skill, dict)
+def get_match_sentence(extract_cv_skill):
+    assert isinstance(extract_cv_skill, dict)
     result = []
-    if extract_jd_skill:
-        skill_lvl_pair = extract_jd_skill.get("skill_lvl_pair")
-        if extract_jd_skill.get("jd_tags"):
-            if extract_jd_skill.get("jd_tags").get("ref_zhineng_multi"):
-                if extract_jd_skill.get("jd_tags").get("ref_zhineng_multi").get("should"):
-                    function_name = extract_jd_skill.get("jd_tags").get("ref_zhineng_multi").get("should")[0].get(
-                        "function_name")
-                    function_id = extract_jd_skill.get("jd_tags").get("ref_zhineng_multi").get("should")[0].get(
-                        "function_id")
-                    if function_name:
-                        function_name = decode_escape(function_name)
-                        result = [[json.dumps({function_id: function_name}, ensure_ascii=False),
-                                   json.dumps(x, ensure_ascii=False)] for x in skill_lvl_pair]
+    if extract_cv_skill:
+        skill_lvl_pair = extract_cv_skill.get("skill_lvl_pair")
+        if extract_cv_skill.get("cv_tag"):
+            if extract_cv_skill.get("cv_tag").get("should"):
+                function_name ='test'
+                function_id = extract_cv_skill.get("cv_tag").get("should")[0].get(
+                    "function_id")
+                if function_name:
+                    function_name = decode_escape(function_name)
+                    result = [[json.dumps({function_id: function_name}, ensure_ascii=False),
+                               json.dumps(x, ensure_ascii=False)] for x in skill_lvl_pair]
     return result
 
 
 def spark_regex_extract_tools(input_path, output_path):
     sc = SparkContext(appName='spark_regex_extract_tools')
     sc.textFile(input_path) \
-        .flatMap(extract_jd_info) \
+        .flatMap(extract_cv_info) \
         .flatMap(lambda line: g_tool_regex_extractor(line)) \
         .map(lambda x: json.dumps(x)) \
         .saveAsTextFile(output_path)
     sc.stop()
 
 
-def spark_extract_jd_fields(input_path, output_path, fields):
-    extractor = JDFieldExtractor(fields)
-    sc = SparkContext(appName='spark_extract_jd_fields')
-    sc.textFile(input_path) \
-        .map(lambda line: uncompress(line.split('\t')[1])) \
-        .map(lambda line: json.loads(line)) \
-        .map(extractor) \
-        .map(lambda data: json.dumps(data)) \
-        .coalesce(100) \
-        .saveAsTextFile(output_path)
-    sc.stop()
+# def spark_extract_jd_fields(input_path, output_path, fields):
+#     extractor = CVFieldExtractor(fields)
+#     sc = SparkContext(appName='spark_extract_jd_fields')
+#     sc.textFile(input_path) \
+#         .map(lambda line: uncompress(line.split('\t')[1])) \
+#         .map(lambda line: json.loads(line)) \
+#         .map(extractor) \
+#         .map(lambda data: json.dumps(data)) \
+#         .coalesce(100) \
+#         .saveAsTextFile(output_path)
+#     sc.stop()
 
 
 def agg_skill_level(line):
@@ -256,7 +254,7 @@ def spark_extract_skill_level(input_path, output_path):
     sc = SparkContext(appName='spark_extract_skill_level')
 
     sc.textFile(input_path) \
-        .flatMap(extract_jd_info) \
+        .flatMap(extract_cv_info) \
         .flatMap(lambda line: g_tool_regex_extractor(line)) \
         .flatMap(get_match_sentence) \
         .map(lambda data: (data[0], (1, data[1]))) \
@@ -298,7 +296,7 @@ if __name__ == '__main__':
 
     if args.command == 'regex_extract_tools':
         spark_regex_extract_tools(args.input_path, args.output_path)
-    elif args.command == 'extract_jd_fields':
-        spark_extract_jd_fields(args.input_path, args.output_path, args.fields)
+    # elif args.command == 'extract_jd_fields':
+    #     spark_extract_jd_fields(args.input_path, args.output_path, args.fields)
     elif args.command == 'extract_skill_words_sentence':
         spark_extract_skill_level(args.input_path, args.output_path)
