@@ -205,7 +205,7 @@ def get_match_sentence(extract_cv_skill):
             if extract_cv_skill.get("cv_tag").get(work_id[0]).get("should"):
                 function_id = extract_cv_skill.get("cv_tag").get(work_id[0]).get("should")[0].split(':')[0]
                 if function_id in function_id_name.keys():
-                    function_name = decode_escape(function_id_name[function_id])
+                    function_name = function_id_name[function_id]
                     result = [[json.dumps({function_id: function_name}, ensure_ascii=False),
                                json.dumps(x, ensure_ascii=False)] for x in skill_lvl_pair]
     return result
