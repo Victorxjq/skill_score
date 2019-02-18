@@ -1,5 +1,5 @@
 #!/bin/bash
-rt_dir=result_score
+rt_dir=/opt/userhome/kdd_xijunquan/skill_score/skill_score/skill_score/data/result_score
 SKILL_CORE_PATH_source=$1
 
 SKILL_CORE_PATH=${rt_dir}/skill_core_score.jsonl
