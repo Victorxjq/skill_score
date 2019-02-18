@@ -180,6 +180,7 @@ def decode_escape(_line):
 
 
 def extract_cv_info(line):
+    print(line)
     # data = json.loads(line[1])
     # res = []
     # for v in g_cv_desc_req_extractor(data).values():
