@@ -42,10 +42,8 @@ def fun_core_skill_score(input_path, output_path):
     """
     f_o = open(output_path, "w", encoding="utf-8")
     with open(input_path, "r", encoding="utf-8") as f:
-        print(input_path)
         for i, line in enumerate(f.readlines()):
             print(i)
-            print(line)
             line = json.loads(line)
             # function_name_lvl4 = line.get("function_name_lvl4")
             skill_ranked = line.get("skill_ranked")
