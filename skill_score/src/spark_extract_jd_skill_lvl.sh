@@ -7,7 +7,7 @@ HDFS_PYTHON_PATH="hdfs:///user/kdd_xijunquan/python/python36.zip"
 EXECUTOR_PYTHON_ENV="./pyenv"
 EXECUTOR_PYTHON_BIN="$EXECUTOR_PYTHON_ENV/python36/bin/python"
 
-INPUT_PATH="/user/kdd_xijunquan/cv_skill_score/icdc/_temporary/0/task_20190215163431_0013_m_024685/part-24685"
+INPUT_PATH="/user/kdd_xijunquan/cv_skill_score/icdc/_temporary/0/*"
 OUTPUT_PATH="/user/kdd_xijunquan/extract_jd_skill_level_funlvl4/"
 
 spark-submit \
