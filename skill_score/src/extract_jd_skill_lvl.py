@@ -147,7 +147,7 @@ class RegexExtractor(object):
         res = []
         rule = re.compile(u"((熟练|熟悉|精通|了解|擅长|熟习|知道|理解|熟知|参与|具有|具备|掌握|应用|运用|使用)+)([\\s\\S]*?)[。|;|；|!|\\n]")
         tmp = dict()
-        tmp["cv_tag"] = eval(data.get("cv_tag").get("cv_tag"))
+        tmp["cv_tag"] = json.loads(data.get("cv_tag").get("cv_tag"))
         tmp["id"] = data.get("id")
         tmp["skill_lvl_pair"] = []
         rt = rule.findall(line)
@@ -156,7 +156,6 @@ class RegexExtractor(object):
             skill_list = get_longest_skill_words(x[2])
             tmp["skill_lvl_pair"].extend([[x, prefix] for x in skill_list])
         res.append(tmp)
-        print(res)
         return res
 
 
@@ -196,6 +195,7 @@ def get_match_sentence(extract_cv_skill):
     if extract_cv_skill:
         skill_lvl_pair = extract_cv_skill.get("skill_lvl_pair")
         if extract_cv_skill.get("cv_tag"):
+            print('keys:',extract_cv_skill["cv_tag"].keys())
             if extract_cv_skill.get("cv_tag").get(extract_cv_skill["cv_tag"].keys()[0]):
                 function_name ='test'
                 print(extract_cv_skill.get("cv_tag").get(extract_cv_skill["cv_tag"].keys()[0]).get("should")[0].split(':')[0])
