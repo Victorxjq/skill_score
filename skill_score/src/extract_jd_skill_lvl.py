@@ -143,7 +143,7 @@ class RegexExtractor(object):
         if not line:
             return []
         else:
-            line = line.strip().lower()
+            line = str(line).strip().lower()
         res = []
         rule = re.compile(u"((熟练|熟悉|精通|了解|擅长|熟习|知道|理解|熟知|参与|具有|具备|掌握|应用|运用|使用)+)([\\s\\S]*?)[。|;|；|!|\\n]")
         tmp = dict()
@@ -198,7 +198,8 @@ def get_match_sentence(extract_cv_skill):
         if extract_cv_skill.get("cv_tag"):
             if extract_cv_skill.get("cv_tag").get("should"):
                 function_name ='test'
-                function_id = extract_cv_skill.get("cv_tag").get("should")[0].keys()[0]
+                print(extract_cv_skill.get("cv_tag").get(extract_cv_skill["cv_tag"].keys()[0]).get("should")[0].split(':')[0])
+                function_id = extract_cv_skill.get("cv_tag").get(extract_cv_skill["cv_tag"].keys()[0]).get("should")[0].split(':')[0]
                 if function_name:
                     function_name = decode_escape(function_name)
                     result = [[json.dumps({function_id: function_name}, ensure_ascii=False),
