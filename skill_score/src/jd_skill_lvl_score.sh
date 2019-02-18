@@ -6,6 +6,8 @@ SKILL_CORE_PATH=${rt_dir}/skill_core_score.jsonl
 SKILL_LEVEL_PATH=${rt_dir}/skill_level_score.jsonl
 MERGE_SKILL_SCORE=${rt_dir}/merge_skill_score.jsonl
 
+hadoop fs -rm -r /user/kdd_xijunquan/extract_jd_skill_level_funlvl4/
+
 sh spark_extract_jd_skill_lvl.sh
 
 hadoop fs -getmerge /user/kdd_xijunquan/extract_jd_skill_level_funlvl4/ ${rt_dir}/extract_jd_skill_level_funlvl4
