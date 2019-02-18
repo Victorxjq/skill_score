@@ -197,10 +197,14 @@ def get_match_sentence(extract_cv_skill):
         if extract_cv_skill.get("cv_tag"):
             work_id=list(extract_cv_skill["cv_tag"].keys())
             if extract_cv_skill.get("cv_tag").get(work_id[0]).get("should"):
-                function_name ='test'
+                function_id_name = {}
+                with open("../data/fun_lvl4_rel_lvl3.jsonl", "r", encoding="utf-8") as f:
+                    for x in f.readlines():
+                        x=eval(x.strip('\n'))[0]
+                        function_id_name=[list(x.keys())[0]]=list(x.values())[0]
                 function_id = extract_cv_skill.get("cv_tag").get(work_id[0]).get("should")[0].split(':')[0]
-                if function_name:
-                    function_name = decode_escape(function_name)
+                if function_id_name[function_id]:
+                    function_name = decode_escape(function_id_name[function_id])
                     result = [[json.dumps({function_id: function_name}, ensure_ascii=False),
                                json.dumps(x, ensure_ascii=False)] for x in skill_lvl_pair]
     return result
