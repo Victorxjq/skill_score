@@ -156,6 +156,7 @@ class RegexExtractor(object):
             skill_list = get_longest_skill_words(x[2])
             tmp["skill_lvl_pair"].extend([[x, prefix] for x in skill_list])
         res.append(tmp)
+        print(res)
         return res
 
 
