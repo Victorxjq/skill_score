@@ -187,7 +187,7 @@ def extract_cv_info(line):
     # for v in g_cv_desc_req_extractor(data).values():
     #     if v:
     #         res.extend(re.split('\n', v))
-    result = [{"id":line[0], "cv_tag": line[1][1], "data": line[1][0]}]
+    result = [{"id":line[0], "cv_tag": line[1], "data": line[1]}]
     return result
 
 
