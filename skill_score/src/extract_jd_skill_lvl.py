@@ -180,8 +180,8 @@ def decode_escape(_line):
 
 
 def extract_cv_info(line):
-    print(line)
     print(line[0])
+    print(line[1])
     # data = json.loads(line[1])
     # res = []
     # for v in g_cv_desc_req_extractor(data).values():
@@ -199,8 +199,7 @@ def get_match_sentence(extract_cv_skill):
         if extract_cv_skill.get("cv_tag"):
             if extract_cv_skill.get("cv_tag").get("should"):
                 function_name ='test'
-                function_id = extract_cv_skill.get("cv_tag").get("should")[0].get(
-                    "function_id")
+                function_id = extract_cv_skill.get("cv_tag").get("should")[0].keys()[0]
                 if function_name:
                     function_name = decode_escape(function_name)
                     result = [[json.dumps({function_id: function_name}, ensure_ascii=False),
