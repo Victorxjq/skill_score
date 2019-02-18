@@ -2,7 +2,7 @@
 
 DRIVER_PYTHON_BIN="/opt/userhome/kdd_xijunquan/anaconda3/envs/python36/bin/python"
 
-HDFS_PYTHON_PATH="hdfs:///user/kdd_baiyongbin/python/python36.zip"
+HDFS_PYTHON_PATH="hdfs:///user/kdd_xijunquan/python/python36.zip"
 
 EXECUTOR_PYTHON_ENV="./pyenv"
 EXECUTOR_PYTHON_BIN="$EXECUTOR_PYTHON_ENV/python36/bin/python"
