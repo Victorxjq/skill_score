@@ -180,14 +180,13 @@ def decode_escape(_line):
 
 
 def extract_cv_info(line):
-    print(eval(line))
-    print(eval(line)[0])
+    print(eval(line)[1][1])
     # data = json.loads(line[1])
     # res = []
     # for v in g_cv_desc_req_extractor(data).values():
     #     if v:
     #         res.extend(re.split('\n', v))
-    result = [{"id":line[0], "cv_tag": line[1], "data": line[1]}]
+    result = [{"id":eval(line)[0], "cv_tag":eval(line)[1][1], "data": eval(line)[1][0]}]
     return result
 
 
