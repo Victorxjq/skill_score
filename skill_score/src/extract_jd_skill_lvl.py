@@ -254,6 +254,7 @@ def agg_skill_level(line):
     # else:
     #     rt = [line[0], line[1]]
     rt = [line[0], line[1], skill_lvl_dict]
+    print(rt)
     return rt
 
 
