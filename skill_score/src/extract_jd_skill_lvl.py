@@ -36,7 +36,7 @@ with open("../data/fun_lvl4_core_skill_v0x9.jsonl", "r", encoding="utf-8") as f:
     for x in f.readlines():
         x = json.loads(x.strip('\n'))
         function_id_name[x['function_id_lvl4']]=x['function_name_lvl4']
-for k,v in function_id_name:
+for k,v in function_id_name.items():
     print(k,v)
 t = pygtrie.CharTrie()
 for k in skill_words:
