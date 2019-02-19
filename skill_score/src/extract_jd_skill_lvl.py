@@ -198,11 +198,10 @@ def extract_cv_info(line):
 
 def get_match_sentence(extract_cv_skill):
     assert isinstance(extract_cv_skill, dict)
-    assert isinstance(extract_cv_skill.get("cv_tag"), dict)
     result = []
     if extract_cv_skill:
         skill_lvl_pair = extract_cv_skill.get("skill_lvl_pair")
-        if extract_cv_skill.get("cv_tag"):
+        if isinstance(extract_cv_skill.get("cv_tag"), dict):
             work_id=list(extract_cv_skill["cv_tag"].keys())
             if extract_cv_skill.get("cv_tag").get(work_id[0]).get("should"):
                 function_id = extract_cv_skill.get("cv_tag").get(work_id[0]).get("should")[0].split(':')[0]
