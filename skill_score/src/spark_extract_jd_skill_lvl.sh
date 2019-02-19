@@ -18,6 +18,6 @@ spark-submit \
     --deploy-mode client \
     --executor-memory 1G \
     --executor-cores 1 \
-    --num-executors 400 \
+    --num-executors 200 \
     ./extract_jd_skill_lvl.py \
     extract_skill_words_sentence --input_path ${INPUT_PATH} --output_path ${OUTPUT_PATH} \
