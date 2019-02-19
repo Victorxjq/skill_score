@@ -200,7 +200,6 @@ def get_match_sentence(extract_cv_skill):
     if extract_cv_skill:
         skill_lvl_pair = extract_cv_skill.get("skill_lvl_pair")
         if extract_cv_skill.get("cv_tag"):
-            print(extract_cv_skill.get("cv_tag"))
             work_id=list(extract_cv_skill["cv_tag"].keys())
             if extract_cv_skill.get("cv_tag").get(work_id[0]).get("should"):
                 function_id = extract_cv_skill.get("cv_tag").get(work_id[0]).get("should")[0].split(':')[0]
@@ -208,6 +207,7 @@ def get_match_sentence(extract_cv_skill):
                     function_name = function_id_name[function_id]
                     result = [[json.dumps({function_id: function_name}, ensure_ascii=False),
                                json.dumps(x, ensure_ascii=False)] for x in skill_lvl_pair]
+                    print(result)
     return result
 
 
