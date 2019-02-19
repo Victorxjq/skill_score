@@ -154,7 +154,8 @@ class RegexExtractor(object):
         res = []
         rule = re.compile(u"((熟练|熟悉|精通|了解|擅长|熟习|知道|理解|熟知|参与|具有|具备|掌握|应用|运用|使用)+)([\\s\\S]*?)[。|;|；|!|\\n]")
         tmp = dict()
-        tmp["cv_tag"] = eval(data.get("cv_tag").get("cv_tag").replace("null", ""))
+        cv_tag_str=data.get("cv_tag").get("cv_tag")
+        tmp["cv_tag"] = eval(cv_tag_str.replace('null',''))
         tmp["id"] = data.get("id")
         tmp["skill_lvl_pair"] = []
         rt = rule.findall(line)
