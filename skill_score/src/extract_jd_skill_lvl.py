@@ -201,6 +201,7 @@ def get_match_sentence(extract_cv_skill):
     result = []
     if extract_cv_skill:
         skill_lvl_pair = extract_cv_skill.get("skill_lvl_pair")
+        print(extract_cv_skill)
         if extract_cv_skill.get("cv_tag"):
             work_id=list(extract_cv_skill["cv_tag"].keys())
             if extract_cv_skill.get("cv_tag").get(work_id[0]).get("should"):
