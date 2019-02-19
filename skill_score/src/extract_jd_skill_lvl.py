@@ -161,7 +161,6 @@ class RegexExtractor(object):
             skill_list = get_longest_skill_words(x[2])
             tmp["skill_lvl_pair"].extend([[x, prefix] for x in skill_list])
         res.append(tmp)
-        print(res)
         return res
 
 
@@ -201,6 +200,7 @@ def get_match_sentence(extract_cv_skill):
     if extract_cv_skill:
         skill_lvl_pair = extract_cv_skill.get("skill_lvl_pair")
         if extract_cv_skill.get("cv_tag"):
+            print(extract_cv_skill.get("cv_tag"))
             work_id=list(extract_cv_skill["cv_tag"].keys())
             if extract_cv_skill.get("cv_tag").get(work_id[0]).get("should"):
                 function_id = extract_cv_skill.get("cv_tag").get(work_id[0]).get("should")[0].split(':')[0]
