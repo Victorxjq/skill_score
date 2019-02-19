@@ -205,11 +205,15 @@ def get_match_sentence(extract_cv_skill):
             work_id=list(extract_cv_skill["cv_tag"].keys())
             if len(work_id) >=1:
                 if isinstance(extract_cv_skill.get("cv_tag").get(work_id[0]), dict):
-                    function_id = extract_cv_skill.get("cv_tag").get(work_id[0]).get("should")[0].split(':')[0]
-                    if function_id in function_id_name.keys():
-                        function_name = function_id_name[function_id]
-                        result = [[json.dumps({function_id: function_name}, ensure_ascii=False),
-                                   json.dumps(x, ensure_ascii=False)] for x in skill_lvl_pair]
+                    l4func_list=extract_cv_skill.get("cv_tag").get(work_id[0]).get("should")
+                    if len(l4func_list)>=1:
+                        function_id_tmp = l4func_list[0].split(':')
+                        if len(function_id_tmp)>=1:
+                            function_id=function_id_tmp[0]
+                            if function_id in function_id_name.keys():
+                                function_name = function_id_name[function_id]
+                                result = [[json.dumps({function_id: function_name}, ensure_ascii=False),
+                                           json.dumps(x, ensure_ascii=False)] for x in skill_lvl_pair]
 
     return result
 
