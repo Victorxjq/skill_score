@@ -8,7 +8,7 @@ EXECUTOR_PYTHON_ENV="./pyenv"
 EXECUTOR_PYTHON_BIN="$EXECUTOR_PYTHON_ENV/python36/bin/python"
 
 INPUT_PATH="/user/kdd_xijunquan/cv_skill_score/icdc/_temporary/0/*"
-OUTPUT_PATH="/user/kdd_xijunquan/extract_jd_skill_level_funlvl4"
+OUTPUT_PATH="/user/kdd_xijunquan/extract_jd_skill_level_funlvl4/"
 
 spark-submit \
     --conf spark.pyspark.driver.python=$DRIVER_PYTHON_BIN \
