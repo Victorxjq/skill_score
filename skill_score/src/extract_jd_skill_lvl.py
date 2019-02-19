@@ -204,7 +204,7 @@ def get_match_sentence(extract_cv_skill):
         if isinstance(extract_cv_skill.get("cv_tag"), dict):
             work_id=list(extract_cv_skill["cv_tag"].keys())
             if len(work_id) >=1:
-                if extract_cv_skill.get("cv_tag").get(work_id[0]).get("should"):
+                if isinstance(extract_cv_skill.get("cv_tag").get(work_id[0]), dict):
                     function_id = extract_cv_skill.get("cv_tag").get(work_id[0]).get("should")[0].split(':')[0]
                     if function_id in function_id_name.keys():
                         function_name = function_id_name[function_id]
