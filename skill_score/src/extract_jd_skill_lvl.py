@@ -36,8 +36,6 @@ with open("../data/fun_lvl4_core_skill_v0x9.jsonl", "r", encoding="utf-8") as f:
     for x in f.readlines():
         x = json.loads(x.strip('\n'))
         function_id_name[x['function_id_lvl4']]=x['function_name_lvl4']
-for k,v in function_id_name.items():
-    print(k,v)
 t = pygtrie.CharTrie()
 for k in skill_words:
     t[k.lower()] = k.lower()
@@ -206,9 +204,12 @@ def get_match_sentence(extract_cv_skill):
             if extract_cv_skill.get("cv_tag").get(work_id[0]).get("should"):
                 function_id = extract_cv_skill.get("cv_tag").get(work_id[0]).get("should")[0].split(':')[0]
                 print(function_id)
+                try:
+                    print(function_id_name[function_id])
+                except:
+                    pass
                 if function_id in function_id_name.keys():
                     function_name = function_id_name[function_id]
-                    print(function_name)
                     result = [[json.dumps({function_id: function_name}, ensure_ascii=False),
                                json.dumps(x, ensure_ascii=False)] for x in skill_lvl_pair]
 
