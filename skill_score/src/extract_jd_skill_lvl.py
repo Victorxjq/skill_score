@@ -209,7 +209,6 @@ def get_match_sentence(extract_cv_skill):
                     function_name = function_id_name[function_id]
                     result = [[json.dumps({function_id: function_name}, ensure_ascii=False),
                                json.dumps(x, ensure_ascii=False)] for x in skill_lvl_pair]
-                    print(result)
 
     return result
 
