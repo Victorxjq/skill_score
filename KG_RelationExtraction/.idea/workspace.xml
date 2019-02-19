@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="006a1a3f-2637-46a0-a7fe-3b71bf7821cd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../skill_score/src/extract_jd_skill_lvl.py" beforeDir="false" afterPath="$PROJECT_DIR$/../skill_score/src/extract_jd_skill_lvl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../skill_score/src/jd_skill_lvl_score.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../skill_score/src/jd_skill_lvl_score.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../skill_score/src/spark_extract_jd_skill_lvl.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../skill_score/src/spark_extract_jd_skill_lvl.sh" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
