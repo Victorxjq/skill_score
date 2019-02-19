@@ -32,11 +32,10 @@ with open("../data/skill_valid_v0x9", "r", encoding="utf-8") as f:
     skill_words = [x.replace("\n", "") for x in f.readlines()]
 
 function_id_name = {}
-with open("../data/fun_lvl4_rel_lvl3.jsonl", "r", encoding="utf-8") as f:
+with open("../data/fun_lvl4_core_skill_v0x9.jsonl", "r", encoding="utf-8") as f:
     for x in f.readlines():
-        x = eval(x.strip('\n'))[0]
-        function_id_name[list(x.keys())[0]] = list(x.values())[0]
-
+        x = json.loads(x.strip('\n'))
+        function_id_name[x['function_id_lvl4']]=x['function_name_lvl4']
 t = pygtrie.CharTrie()
 for k in skill_words:
     t[k.lower()] = k.lower()
