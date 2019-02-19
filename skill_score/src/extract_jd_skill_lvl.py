@@ -32,10 +32,12 @@ with open("../data/skill_valid_v0x9", "r", encoding="utf-8") as f:
     skill_words = [x.replace("\n", "") for x in f.readlines()]
 
 function_id_name = {}
-with open("../data/fun_lvl4_core_skill_v0x9.jsonl", "r", encoding="utf-8") as f:
+with open("../data/function_taxonomy.txt", "r", encoding="utf-8") as f:
     for x in f.readlines():
-        x = json.loads(x.strip('\n'))
-        function_id_name[x['function_id_lvl4']]=x['function_name_lvl4']
+        x = x.strip('\n').split('\t')
+        if x[0].startswith('42'):
+            function_id_name[x[0]]=x[1]
+            # print(x[0],x[1])
 t = pygtrie.CharTrie()
 for k in skill_words:
     t[k.lower()] = k.lower()
