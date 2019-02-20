@@ -16,8 +16,8 @@ spark-submit \
     --conf spark.yarn.dist.archives=$HDFS_PYTHON_PATH"#"$EXECUTOR_PYTHON_ENV \
     --master yarn \
     --deploy-mode client \
-    --executor-memory 1G \
-    --executor-cores 1 \
-    --num-executors 200 \
+    --executor-memory 4G \
+    --executor-cores 2 \
+    --num-executors 400 \
     ./extract_jd_skill_lvl.py \
     extract_skill_words_sentence --input_path ${INPUT_PATH} --output_path ${OUTPUT_PATH} \
