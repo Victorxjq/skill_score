@@ -11,6 +11,9 @@ if __name__ == '__main__':
             for skill in list(line['skill_level'].keys()):
                 skill_name='#skill$'+skill.replace(' ','_').lower()
                 skill_score=line['skill_level'][skill][0]
-                skill_sim=model.similarity(func4_name,skill_name)
+                try:
+                    skill_sim=model.similarity(func4_name,skill_name)
+                except:
+                    skill_sim=0
                 print('func4_name/skill_name/similarity/score',func4_name,skill_name,skill_sim,skill_score)
 
