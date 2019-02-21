@@ -92,7 +92,6 @@ def extract_cv_info_basic(line):
             res = 'null'
     else:
         res = 'null'
-    print(res)
     return res
 
 
@@ -105,6 +104,8 @@ if __name__ == '__main__':
     sc = SparkContext(appName='join_cv_all')
     basic_file_path_test = '/basic_data/icdc/resumes_extras/20190115/icdc_0/data__ffd132e3_a01d_4ed3_bad0_98f9b8b069c4'
     inp_basic = sc.textFile(basic_file_path_test).map(extract_cv_info_basic).filter(lambda x: x != 'null' or x != [])
+    for val in inp_basic.collect():
+        print(val)
 
     # algorithm_file_path = '/basic_data/icdc/algorithms/20190115/*'
     # basic_file_path = '/basic_data/icdc/resumes_extras/20190115/*'
