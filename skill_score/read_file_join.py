@@ -79,9 +79,14 @@ def extract_cv_info_basic(line):
     if len(k_id) < 15:
         try:
             info = json.loads(uncompress(line[1]))
+            work_content=''
+            skill_content=''
             if 'work' in info.keys() and info['work'] != '':
+                work_content=info['work']
+            if 'skill' in info.keys() and info['skill'] != '':
+                skill_content = info['skill']
                 # print(info['cv_tag'])
-                res = (k_id, {'work': info['work']})
+                res = (k_id, {'work': work_content,'skill':skill_content})
             else:
                 res = 'null'
         except:
@@ -105,7 +110,7 @@ if __name__ == '__main__':
     print('start load basic files')
     inp_basic = sc.textFile(basic_file_path).map(extract_cv_info_basic).filter(lambda x: x != 'null' or x != [])
     print('Group_by_keys:')
-    output_path = '/user/kdd_xijunquan/cv_skill_score/icdc'
+    output_path = '/user/kdd_xijunquan/cv_skill_score/icdc_with_skill'
     result = inp_basic.join(inp_algo).saveAsTextFile(output_path)
     print('batch,completed')
     sc.stop()
