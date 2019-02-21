@@ -102,19 +102,14 @@ def add(a, b):
 # load data
 if __name__ == '__main__':
     sc = SparkContext(appName='join_cv_all')
-    basic_file_path_test = '/basic_data/icdc/resumes_extras/20190115/icdc_0/data__ffd132e3_a01d_4ed3_bad0_98f9b8b069c4'
-    inp_basic = sc.textFile(basic_file_path_test).map(extract_cv_info_basic).filter(lambda x: x != 'null' or x != [])
-    for val in inp_basic.collect():
-        print(val)
-
-    # algorithm_file_path = '/basic_data/icdc/algorithms/20190115/*'
-    # basic_file_path = '/basic_data/icdc/resumes_extras/20190115/*'
-    # print('start load algorithm files')
-    # inp_algo = sc.textFile(algorithm_file_path).map(extract_cv_info_algorithm).filter(lambda x: x != 'null' or x != [])
-    # print('start load basic files')
-    # inp_basic = sc.textFile(basic_file_path).map(extract_cv_info_basic).filter(lambda x: x != 'null' or x != [])
-    # print('Group_by_keys:')
-    # output_path = '/user/kdd_xijunquan/cv_skill_score/icdc_with_skill'
-    # result = inp_basic.join(inp_algo).saveAsTextFile(output_path)
-    # print('batch,completed')
+    algorithm_file_path = '/basic_data/icdc/algorithms/20190115/*'
+    basic_file_path = '/basic_data/icdc/resumes_extras/20190115/*'
+    print('start load algorithm files')
+    inp_algo = sc.textFile(algorithm_file_path).map(extract_cv_info_algorithm).filter(lambda x: x != 'null' or x != [])
+    print('start load basic files')
+    inp_basic = sc.textFile(basic_file_path).map(extract_cv_info_basic).filter(lambda x: x != 'null' or x != [])
+    print('Group_by_keys:')
+    output_path = '/user/kdd_xijunquan/cv_skill_score/icdc_with_skill'
+    result = inp_basic.join(inp_algo).saveAsTextFile(output_path)
+    print('batch,completed')
     sc.stop()
