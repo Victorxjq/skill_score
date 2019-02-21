@@ -18,12 +18,12 @@ if __name__ == '__main__':
                     skill_sim=model.similarity(func4_name,skill_name)
                 except:
                     skill_sim=0
-                if skill_sim>0:
+                if skill_sim>0.3:
                     skill_name_list.append(skill_name+'$$'+str(skill_score))
                 # print('func4_name/skill_name/similarity/score',func4_name,skill_name,skill_sim,skill_score)
             print(index)
             index+=1
-            output_file.write(func4_name+'\t'+'\t'.join(skill_name_list))
+            output_file.write(func4_name+'\t'+','.join(skill_name_list))
             output_file.write('\n')
     output_file.close()
 
