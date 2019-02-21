@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="006a1a3f-2637-46a0-a7fe-3b71bf7821cd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../skill_score/process_result.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dgraph/byb-201902201700.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dgraph/byb-201902201700.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../skill_score/process_result.py" beforeDir="false" afterPath="$PROJECT_DIR$/../skill_score/process_result.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -98,8 +96,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/New_embedding/Preprocess_cluster.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="228" column="171" lean-forward="true" selection-start-line="226" selection-start-column="2" selection-end-line="228" selection-end-column="171" />
+            <state relative-caret-position="233">
+              <caret line="228" column="106" selection-start-line="228" selection-start-column="59" selection-end-line="228" selection-end-column="106" />
             </state>
           </provider>
         </entry>
@@ -789,8 +787,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/New_embedding/Preprocess_cluster.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="228" column="171" lean-forward="true" selection-start-line="226" selection-start-column="2" selection-end-line="228" selection-end-column="171" />
+        <state relative-caret-position="233">
+          <caret line="228" column="106" selection-start-line="228" selection-start-column="59" selection-end-line="228" selection-end-column="106" />
         </state>
       </provider>
     </entry>

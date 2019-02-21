@@ -7,9 +7,9 @@ if __name__ == '__main__':
         for line in input_file.readlines():
             line=line.strip('\n')
             line=json.loads(line)
-            func4_name='#funlvl4$'+line['function_name_lvl4']
+            func4_name='#funlvl4$'+line['function_name_lvl4'].replace(' ','_')
             for skill in list(line['skill_level'].keys()):
-                skill_name='#skill$'+skill
+                skill_name='#skill$'+skill.replace(' ','_')
                 skill_score=line['skill_level'][skill][0]
                 skill_sim=model.similarity(func4_name,skill_name)
                 print('func4_name/skill_name/similarity/score',func4_name,skill_name,skill_sim,skill_score)
