@@ -73,11 +73,14 @@ if __name__ == '__main__':
         'uid': "_:%s" % "BUG跟踪",
         'name': "BUG跟踪",
         'entity_id': '18795',
-        'alias': ["bug跟踪", "BUG追踪", "bug追踪"]
+        'alias': ["bug跟踪", "BUG追踪", "bug追踪"],
+        'type':'skill',
+        'operator': 'kdd_xijunquan',
+        'creator': 'kdd_xijunquan',
+        'source': 'manual_modify',
     }
     p_update.append(p_manual)
-    # print(p_del)
-    # print(p_update)
+
     # # 清空alias及metions
     txn = client.txn()
     try:
