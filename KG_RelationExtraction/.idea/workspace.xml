@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="006a1a3f-2637-46a0-a7fe-3b71bf7821cd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../skill_score/process_result.py" beforeDir="false" afterPath="$PROJECT_DIR$/../skill_score/process_result.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../skill_score/skill_score.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,7 +40,7 @@
         <counts>
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="78" />
-          <entry key="Python" value="307" />
+          <entry key="Python" value="308" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -56,7 +57,7 @@
           <entry key="dynamodb_dump" value="1" />
           <entry key="jsonl" value="25" />
           <entry key="md" value="1" />
-          <entry key="py" value="304" />
+          <entry key="py" value="305" />
           <entry key="so" value="1" />
           <entry key="tsv" value="2" />
           <entry key="txt" value="8" />
@@ -93,11 +94,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/New_embedding/Preprocess_cluster.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="233">
               <caret line="228" column="106" selection-start-line="228" selection-start-column="59" selection-end-line="228" selection-end-column="106" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Xlore/Query_crawler.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-52">
+              <caret line="7" selection-start-line="7" selection-end-line="7" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -265,6 +275,11 @@
               <item name="KG_RelationExtraction" type="b2602c69:ProjectViewProjectNode" />
               <item name="KG_RelationExtraction" type="462c0819:PsiDirectoryNode" />
               <item name="New_KG" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="KG_RelationExtraction" type="b2602c69:ProjectViewProjectNode" />
+              <item name="KG_RelationExtraction" type="462c0819:PsiDirectoryNode" />
+              <item name="Xlore" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="KG_RelationExtraction" type="b2602c69:ProjectViewProjectNode" />
@@ -526,13 +541,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Kg_2.0/Entity_alignment/preprocess_kg2/preprocess_for_kg2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="65" column="75" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/KG_completation/Read_predicted_dataset.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-396" />
@@ -789,6 +797,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="233">
           <caret line="228" column="106" selection-start-line="228" selection-start-column="59" selection-end-line="228" selection-end-column="106" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Xlore/Query_crawler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-52">
+          <caret line="7" selection-start-line="7" selection-end-line="7" selection-end-column="26" />
         </state>
       </provider>
     </entry>
