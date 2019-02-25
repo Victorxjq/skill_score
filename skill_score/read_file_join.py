@@ -105,9 +105,9 @@ if __name__ == '__main__':
     algorithm_file_path = '/basic_data/icdc/algorithms/20190115/*'
     basic_file_path = '/basic_data/icdc/resumes_extras/20190115/*'
     print('start load algorithm files')
-    inp_algo = sc.textFile(algorithm_file_path).map(extract_cv_info_algorithm).filter(lambda x: x != 'null' or x != [])
+    inp_algo = sc.textFile(algorithm_file_path).map(extract_cv_info_algorithm).filter(lambda x: x != 'null' and x != [])
     print('start load basic files')
-    inp_basic = sc.textFile(basic_file_path).map(extract_cv_info_basic).filter(lambda x: x != 'null' or x != [])
+    inp_basic = sc.textFile(basic_file_path).map(extract_cv_info_basic).filter(lambda x: x != 'null' and x != [])
     print('Group_by_keys:')
     output_path = '/user/kdd_xijunquan/cv_skill_score/icdc_with_skill'
     result = inp_basic.join(inp_algo).saveAsTextFile(output_path)
