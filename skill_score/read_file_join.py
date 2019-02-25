@@ -110,6 +110,6 @@ if __name__ == '__main__':
     inp_basic = sc.textFile(basic_file_path).map(extract_cv_info_basic).filter(lambda x: x != 'null' and x != [])
     print('Group_by_keys:')
     output_path = '/user/kdd_xijunquan/cv_skill_score/icdc_with_skill'
-    result = inp_basic.join(inp_algo).saveAsTextFile(output_path)
+    result = inp_basic.join(inp_algo).coalesce(30).saveAsTextFile(output_path)
     print('batch,completed')
     sc.stop()
