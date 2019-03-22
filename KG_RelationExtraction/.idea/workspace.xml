@@ -2,8 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="006a1a3f-2637-46a0-a7fe-3b71bf7821cd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../skill_score/skill_score.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cv_extract/.idea/cv_extract.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cv_extract/.idea/libraries/R_User_Library.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cv_extract/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cv_extract/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cv_extract/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cv_extract/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cv_extract/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cv_extract/ifchange_python_api/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cv_extract/read.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../skill_score/skill_score.py" beforeDir="false" afterPath="$PROJECT_DIR$/../skill_score/skill_score.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../skill_score/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../skill_score/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,38 +25,38 @@
     <session id="-110130596">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="19" />
+          <entry key="project.closed" value="22" />
           <entry key="project.open.time.0" value="6" />
-          <entry key="project.open.time.1" value="3" />
+          <entry key="project.open.time.1" value="5" />
           <entry key="project.open.time.11" value="2" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.4" value="2" />
           <entry key="project.open.time.5" value="4" />
-          <entry key="project.open.time.7" value="1" />
+          <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="22" />
+          <entry key="project.opened" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="9" />
-          <entry key="py" value="73870" />
+          <entry key="py" value="73889" />
           <entry key="txt" value="73" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Markdown" value="1" />
-          <entry key="PLAIN_TEXT" value="78" />
-          <entry key="Python" value="308" />
+          <entry key="PLAIN_TEXT" value="79" />
+          <entry key="Python" value="310" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="82" />
-          <entry key="Python" value="73870" />
+          <entry key="Python" value="73889" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -55,9 +65,9 @@
           <entry key="cfadmin" value="1" />
           <entry key="csv" value="36" />
           <entry key="dynamodb_dump" value="1" />
-          <entry key="jsonl" value="25" />
+          <entry key="jsonl" value="26" />
           <entry key="md" value="1" />
-          <entry key="py" value="305" />
+          <entry key="py" value="307" />
           <entry key="so" value="1" />
           <entry key="tsv" value="2" />
           <entry key="txt" value="8" />
@@ -69,56 +79,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/同义实体/技能词链接/同义词/clean_id.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2700">
-              <caret line="180" column="4" selection-start-line="180" selection-start-column="4" selection-end-line="180" selection-end-column="81" />
+            <state relative-caret-position="279">
+              <caret line="194" selection-start-line="194" selection-end-line="194" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
-                <marker date="1550652860343" expanded="true" signature="3257:5162" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Dgraph/byb-201902201700.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="80" column="5" selection-start-line="71" selection-start-column="4" selection-end-line="80" selection-end-column="5" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/New_embedding/Preprocess_cluster.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="228" column="106" selection-start-line="228" selection-start-column="59" selection-end-line="228" selection-end-column="106" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Xlore/Query_crawler.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-52">
-              <caret line="7" selection-start-line="7" selection-end-line="7" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Dgraph/Upload_Dgraph.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1245">
-              <caret line="83" column="35" selection-start-line="81" selection-start-column="13" selection-end-line="83" selection-end-column="35" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
+                <marker date="1551777419418" expanded="true" signature="3257:5193" ph="..." />
               </folding>
             </state>
           </provider>
@@ -180,7 +148,6 @@
         <option value="$PROJECT_DIR$/同义实体/Synonyms_entity.py" />
         <option value="$PROJECT_DIR$/venv/Test_spark.py" />
         <option value="$PROJECT_DIR$/Entity_linkage/Candidate_process.py" />
-        <option value="$PROJECT_DIR$/Dgraph/Upload_Dgraph.py" />
         <option value="$PROJECT_DIR$/Wikidata/QueryFromWikidata.py" />
         <option value="$PROJECT_DIR$/Xlore/Query_crawler.py" />
         <option value="$PROJECT_DIR$/KG_completation/Read_predicted_dataset.py" />
@@ -221,16 +188,17 @@
         <option value="$PROJECT_DIR$/同义实体/技能词链接/同义词/sysnonmys_word.py" />
         <option value="$PROJECT_DIR$/同义实体/技能词链接/同义词/upload_dgrph_git.py" />
         <option value="$PROJECT_DIR$/Test.py" />
-        <option value="$PROJECT_DIR$/同义实体/技能词链接/同义词/clean_id.py" />
         <option value="$PROJECT_DIR$/Dgraph/skill_entity_update_20190220.jsonl" />
         <option value="$PROJECT_DIR$/Dgraph/byb-201902201700.py" />
+        <option value="$PROJECT_DIR$/Dgraph/Upload_Dgraph.py" />
+        <option value="$PROJECT_DIR$/同义实体/技能词链接/同义词/clean_id.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="798" />
+    <option name="height" value="795" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -269,22 +237,18 @@
             <path>
               <item name="KG_RelationExtraction" type="b2602c69:ProjectViewProjectNode" />
               <item name="KG_RelationExtraction" type="462c0819:PsiDirectoryNode" />
+              <item name="Dgraph" type="462c0819:PsiDirectoryNode" />
+              <item name="Preprocess" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="KG_RelationExtraction" type="b2602c69:ProjectViewProjectNode" />
+              <item name="KG_RelationExtraction" type="462c0819:PsiDirectoryNode" />
               <item name="New_embedding" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="KG_RelationExtraction" type="b2602c69:ProjectViewProjectNode" />
               <item name="KG_RelationExtraction" type="462c0819:PsiDirectoryNode" />
               <item name="New_KG" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="KG_RelationExtraction" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KG_RelationExtraction" type="462c0819:PsiDirectoryNode" />
-              <item name="Xlore" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="KG_RelationExtraction" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KG_RelationExtraction" type="462c0819:PsiDirectoryNode" />
-              <item name="同义实体" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -325,7 +289,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.byb-201902201700">
+  <component name="RunManager" selected="Python.clean_id">
     <configuration name="Test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="KG_RelationExtraction" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -339,6 +303,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Upload_Dgraph" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="KG_RelationExtraction" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/anaconda3/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/.." />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Dgraph/Upload_Dgraph.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -410,27 +395,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="sysnonmys_word" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="KG_RelationExtraction" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="$USER_HOME$/venv/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/.." />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/同义实体/技能词链接/同义词/sysnonmys_word.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="upload_dgrph_git" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="KG_RelationExtraction" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -453,19 +417,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.sysnonmys_word" />
       <item itemvalue="Python.upload_dgrph_git" />
       <item itemvalue="Python.clean_id" />
       <item itemvalue="Python.Test" />
       <item itemvalue="Python.byb-201902201700" />
+      <item itemvalue="Python.Upload_Dgraph" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.byb-201902201700" />
         <item itemvalue="Python.clean_id" />
+        <item itemvalue="Python.Upload_Dgraph" />
+        <item itemvalue="Python.byb-201902201700" />
         <item itemvalue="Python.Test" />
         <item itemvalue="Python.upload_dgrph_git" />
-        <item itemvalue="Python.sysnonmys_word" />
       </list>
     </recent_temporary>
   </component>
@@ -492,10 +456,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="795" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="795" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28746396" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30259365" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -541,11 +505,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/KG_completation/Read_predicted_dataset.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-396" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/KG_completation/relation_id.csv" />
     <entry file="file://$PROJECT_DIR$/KG_completation/relation2id.csv" />
     <entry file="file://$PROJECT_DIR$/KG_completation/entity2id.csv" />
@@ -723,9 +682,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/‎kg_nodes_full_data_v2.0_updated.jsonl">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Preprocess.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
@@ -738,11 +694,6 @@
         <state relative-caret-position="608">
           <caret line="191" column="18" selection-start-line="191" selection-start-column="18" selection-end-line="191" selection-end-column="18" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dgraph/Data_clean.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1342" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Entity_linkage/UploadtoDB.py">
@@ -762,34 +713,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/同义实体/技能词链接/同义词/clean_id.py">
+    <entry file="file://$PROJECT_DIR$/Xlore/Query_crawler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2700">
-          <caret line="180" column="4" selection-start-line="180" selection-start-column="4" selection-end-line="180" selection-end-column="81" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <marker date="1550652860343" expanded="true" signature="3257:5162" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dgraph/Upload_Dgraph.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1245">
-          <caret line="83" column="35" selection-start-line="81" selection-start-column="13" selection-end-line="83" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dgraph/byb-201902201700.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="80" column="5" selection-start-line="71" selection-start-column="4" selection-end-line="80" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="15">
+          <caret line="7" selection-start-line="7" selection-end-line="7" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -800,10 +727,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Xlore/Query_crawler.py">
+    <entry file="file://$PROJECT_DIR$/Dgraph/byb-201902201700.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-52">
-          <caret line="7" selection-start-line="7" selection-end-line="7" selection-end-column="26" />
+        <state relative-caret-position="1200">
+          <caret line="80" column="5" selection-start-line="71" selection-start-column="4" selection-end-line="80" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/‎kg_nodes_full_data_v2.0_updated.jsonl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dgraph/Preprocess/Preprocess_import_new_entitys.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-307" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dgraph/Data_clean.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-896" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dgraph/Upload_Dgraph.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="218" column="20" lean-forward="true" selection-start-line="218" selection-start-column="20" selection-end-line="218" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/同义实体/技能词链接/同义词/clean_id.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="194" selection-start-line="194" selection-end-line="194" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <marker date="1551777419418" expanded="true" signature="3257:5193" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

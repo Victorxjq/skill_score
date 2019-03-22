@@ -94,7 +94,6 @@ def extract_cv_info_basic(line):
         res = 'null'
     return res
 
-
 def add(a, b):
     return str(a) + '\t' + str(b)
 
