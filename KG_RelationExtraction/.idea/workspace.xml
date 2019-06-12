@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="006a1a3f-2637-46a0-a7fe-3b71bf7821cd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../cv_extract/.idea/cv_extract.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cv_extract/.idea/libraries/R_User_Library.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cv_extract/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cv_extract/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cv_extract/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cv_extract/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cv_extract/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cv_extract/ifchange_python_api/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../cv_extract/read.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../skill_score/skill_score.py" beforeDir="false" afterPath="$PROJECT_DIR$/../skill_score/skill_score.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../skill_score/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../skill_score/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,18 +14,19 @@
     <session id="-110130596">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="22" />
+          <entry key="project.closed" value="24" />
           <entry key="project.open.time.0" value="6" />
-          <entry key="project.open.time.1" value="5" />
+          <entry key="project.open.time.1" value="6" />
           <entry key="project.open.time.11" value="2" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.4" value="2" />
           <entry key="project.open.time.5" value="4" />
           <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="25" />
+          <entry key="project.opened" value="27" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -50,7 +40,7 @@
         <counts>
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="79" />
-          <entry key="Python" value="310" />
+          <entry key="Python" value="314" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -67,7 +57,7 @@
           <entry key="dynamodb_dump" value="1" />
           <entry key="jsonl" value="26" />
           <entry key="md" value="1" />
-          <entry key="py" value="307" />
+          <entry key="py" value="311" />
           <entry key="so" value="1" />
           <entry key="tsv" value="2" />
           <entry key="txt" value="8" />
@@ -79,15 +69,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/同义实体/技能词链接/同义词/clean_id.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
+            <state relative-caret-position="2865">
               <caret line="194" selection-start-line="194" selection-end-line="194" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
                 <marker date="1551777419418" expanded="true" signature="3257:5193" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/KG_completation/creating_inputdata.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
@@ -158,7 +157,6 @@
         <option value="$PROJECT_DIR$/New_KG/Linked_entity_from_old.py" />
         <option value="$PROJECT_DIR$/同义实体/ChineseAntiword.py" />
         <option value="$PROJECT_DIR$/同义实体/Classify_model.py" />
-        <option value="$PROJECT_DIR$/同义实体/Char_embedding.py" />
         <option value="$PROJECT_DIR$/同义实体/Linked_entity.py" />
         <option value="$PROJECT_DIR$/New_KG/Wikidata/Wiki_skills_mention.py" />
         <option value="$PROJECT_DIR$/New_KG/Wikidata/Query_relation_wiki.py" />
@@ -192,10 +190,11 @@
         <option value="$PROJECT_DIR$/Dgraph/byb-201902201700.py" />
         <option value="$PROJECT_DIR$/Dgraph/Upload_Dgraph.py" />
         <option value="$PROJECT_DIR$/同义实体/技能词链接/同义词/clean_id.py" />
+        <option value="$PROJECT_DIR$/同义实体/Char_embedding.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="795" />
@@ -228,22 +227,6 @@
             <path>
               <item name="KG_RelationExtraction" type="b2602c69:ProjectViewProjectNode" />
               <item name="KG_RelationExtraction" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="KG_RelationExtraction" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KG_RelationExtraction" type="462c0819:PsiDirectoryNode" />
-              <item name="Dgraph" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="KG_RelationExtraction" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KG_RelationExtraction" type="462c0819:PsiDirectoryNode" />
-              <item name="Dgraph" type="462c0819:PsiDirectoryNode" />
-              <item name="Preprocess" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="KG_RelationExtraction" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KG_RelationExtraction" type="462c0819:PsiDirectoryNode" />
-              <item name="New_embedding" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="KG_RelationExtraction" type="b2602c69:ProjectViewProjectNode" />
@@ -456,10 +439,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="795" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1440" height="795" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30259365" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31268013" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -505,8 +487,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/KG_completation/relation_id.csv" />
-    <entry file="file://$PROJECT_DIR$/KG_completation/relation2id.csv" />
     <entry file="file://$PROJECT_DIR$/KG_completation/entity2id.csv" />
     <entry file="file://$PROJECT_DIR$/KG_completation/‎kg_nodes_full_data_v2.0_updated.jsonl">
       <provider selected="true" editor-type-id="text-editor" />
@@ -632,13 +612,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/KG_completation/creating_inputdata.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" selection-start-line="4" selection-end-line="7" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/New_embedding/clean_skill_level4_rank_with_lvl3funname_1in100.jsonl">
       <provider selected="true" editor-type-id="LargeFileEditor" />
     </entry>
@@ -647,11 +620,6 @@
         <state relative-caret-position="1635">
           <caret line="109" column="41" selection-start-line="109" selection-start-column="41" selection-end-line="109" selection-end-column="41" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/同义实体/Linked_entity/Linked_entity.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3135" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/同义实体/kg2.0_linked_entity/linked_entity.py">
@@ -720,13 +688,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/New_embedding/Preprocess_cluster.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="228" column="106" selection-start-line="228" selection-start-column="59" selection-end-line="228" selection-end-column="106" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Dgraph/byb-201902201700.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1200">
@@ -754,14 +715,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/同义实体/ChineseAntiword.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/同义实体/Char_embedding.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1568">
+          <caret line="34" column="29" lean-forward="true" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/New_embedding/Preprocess_cluster.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1137">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/同义实体/Linked_entity/Linked_entity.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2799" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/同义实体/技能词链接/同义词/clean_id.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
+        <state relative-caret-position="2865">
           <caret line="194" selection-start-line="194" selection-end-line="194" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
             <marker date="1551777419418" expanded="true" signature="3257:5193" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/KG_completation/creating_inputdata.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
